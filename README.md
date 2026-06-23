@@ -17,6 +17,19 @@ npm run dev           # http://localhost:5173
 npm run build
 ```
 
+## Авторизация
+
+Простой вход без сервера (логин/пароль в `src/services/auth.ts`):
+
+| | |
+|---|---|
+| Логин | `admin` |
+| Пароль | `architect2026` |
+
+«Запомнить» → `localStorage` на 30 дней. Без галочки → `sessionStorage` на 12 часов.
+
+> Пароль виден в исходниках JS — подходит для личного use, не для публичной защиты данных.
+
 ## Vercel
 
 1. Push в GitHub

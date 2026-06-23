@@ -1,7 +1,9 @@
+import { useState, useEffect, useCallback } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { useEffect } from 'react';
 import { useAppStore } from '@/stores/appStore';
+import { isAuthenticated } from '@/services/auth';
 import Layout from '@/components/Layout';
+import LoginPage from '@/pages/LoginPage';
 import HomePage from '@/pages/HomePage';
 import SetsPage from '@/pages/SetsPage';
 import QuizPage from '@/pages/QuizPage';
@@ -16,10 +18,18 @@ import HistoryPage from '@/pages/HistoryPage';
 
 export default function App() {
   const init = useAppStore((s) => s.init);
+  const [authed, setAuthed] = useState(() => isAuthenticated());
+
   useEffect(() => { init(); }, [init]);
 
+  const onAuthSuccess = useCallback(() => setAuthed(true), []);
+
+  if (!authed) {
+    return <LoginPage onSuccess={onAuthSuccess} />;
+  }
+
   return (
-    <Layout>
+    <Layout onLogout={() => setAuthed(false)}>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/sets" element={<SetsPage />} />

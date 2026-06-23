@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useAppStore } from '@/stores/appStore';
+import { logout, getSession } from '@/services/auth';
 
 const NAV = [
   { to: '/', label: 'Главная' },
@@ -13,10 +14,16 @@ const NAV = [
   { to: '/settings', label: 'Настройки' },
 ];
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout({ children, onLogout }: { children: React.ReactNode; onLogout: () => void }) {
   const location = useLocation();
   const toggleDark = useAppStore((s) => s.toggleDark);
   const streak = useAppStore((s) => s.progress.streak.current);
+  const session = getSession();
+
+  const handleLogout = () => {
+    logout();
+    onLogout();
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -24,8 +31,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="max-w-5xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-3">
           <Link to="/" className="font-bold text-lg">Integration Architect Trainer</Link>
           <div className="flex items-center gap-3 text-sm">
+            {session && <span className="opacity-80 text-xs">{session.username}</span>}
             {streak > 0 && <span title="Streak">🔥 {streak}</span>}
             <button type="button" onClick={toggleDark} className="px-2 py-1 rounded bg-white/20 hover:bg-white/30" title="Тёмная тема">☀/🌙</button>
+            <button type="button" onClick={handleLogout} className="px-2 py-1 rounded bg-white/20 hover:bg-white/30 text-xs" title="Выйти">Выход</button>
           </div>
         </div>
         <nav className="max-w-5xl mx-auto px-4 pb-3 flex flex-wrap gap-2 text-sm">
