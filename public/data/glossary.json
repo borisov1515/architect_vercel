@@ -1,0 +1,14 @@
+{
+  "entries": [
+    { "term": "Fire and Forget", "termRu": "Fire and Forget", "definition": "Асинхронный паттерн: отправитель не ждёт ответа. Подходит для уведомлений и событий без немедленного результата.", "relatedSection": "fundamentals" },
+    { "term": "Request and Reply", "termRu": "Запрос-ответ", "definition": "Синхронный паттерн: система ждёт ответа в рамках таймаута. Нужен для real-time UI и когда результат нужен сразу.", "relatedSection": "fundamentals" },
+    { "term": "Remote Call-In", "termRu": "Внешний вызов в Salesforce", "definition": "Внешняя система вызывает Salesforce API (REST/SOAP) для создания или обновления данных.", "relatedSection": "fundamentals" },
+    { "term": "Change Data Capture", "termRu": "CDC", "definition": "Механизм Salesforce для публикации изменений записей подписчикам Streaming API. Не публикуется из Apex напрямую как custom event.", "relatedSection": "data" },
+    { "term": "Platform Events", "termRu": "Platform Events", "definition": "Кастомные события в Event Bus. Публикуются после commit транзакции. Высокая масштабируемость.", "relatedSection": "data" },
+    { "term": "Named Credentials", "termRu": "Named Credentials", "definition": "Безопасное хранение endpoint и auth для callout из Salesforce без хардкода секретов.", "relatedSection": "security" },
+    { "term": "Salesforce Connect", "termRu": "Salesforce Connect", "definition": "Data virtualization: внешние данные как external objects без полной репликации в Salesforce.", "relatedSection": "data" },
+    { "term": "Composite API", "termRu": "Composite API", "definition": "REST ресурсы для нескольких операций в одном HTTP-запросе (до 200 записей в composite tree/batch).", "relatedSection": "api-design" },
+    { "term": "Replay ID", "termRu": "Replay ID", "definition": "Курсор подписки на Event Bus: -1 новые события, -2 все доступные в окне хранения.", "relatedSection": "data" },
+    { "term": "ESB", "termRu": "ESB", "definition": "Enterprise Service Bus — оркестрация, маршрутизация, трансформация между системами.", "relatedSection": "architecture" }
+  ]
+}

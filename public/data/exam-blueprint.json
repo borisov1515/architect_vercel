@@ -1,0 +1,52 @@
+{
+  "sections": [
+    {
+      "id": "fundamentals",
+      "title": "Integration Fundamentals",
+      "titleRu": "Основы интеграции",
+      "weightPercent": 23,
+      "descriptionRu": "Паттерны интеграции, механизмы, выбор подхода под бизнес-требования.",
+      "theorySlug": "01-fundamentals"
+    },
+    {
+      "id": "architecture",
+      "title": "Integration Architecture",
+      "titleRu": "Архитектура интеграции",
+      "weightPercent": 20,
+      "descriptionRu": "ESB, middleware, API-led, масштабирование, декомпозиция монолита.",
+      "theorySlug": "02-architecture"
+    },
+    {
+      "id": "api-design",
+      "title": "API Management & Design",
+      "titleRu": "API и дизайн интеграций",
+      "weightPercent": 18,
+      "descriptionRu": "REST, Composite, Bulk, лимиты, контракты, WSDL/RAML.",
+      "theorySlug": "03-api-design"
+    },
+    {
+      "id": "security",
+      "title": "Security & Identity",
+      "titleRu": "Безопасность и идентификация",
+      "weightPercent": 17,
+      "descriptionRu": "OAuth, Named Credentials, Shield, SSO, mutual TLS.",
+      "theorySlug": "04-security"
+    },
+    {
+      "id": "data",
+      "title": "Data Integration",
+      "titleRu": "Интеграция данных",
+      "weightPercent": 12,
+      "descriptionRu": "ETL, CDC, Platform Events, sync vs virtualization, Connect.",
+      "theorySlug": "05-data"
+    },
+    {
+      "id": "operations",
+      "title": "Testing, Monitoring & Operations",
+      "titleRu": "Тестирование и эксплуатация",
+      "weightPercent": 10,
+      "descriptionRu": "Мониторинг, лимиты, retry, batch, observability.",
+      "theorySlug": "06-operations"
+    }
+  ]
+}
