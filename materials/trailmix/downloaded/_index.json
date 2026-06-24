@@ -1,0 +1,114 @@
+[
+  {
+    "type": "link",
+    "title": "Measure Performance for Your Salesforce Org",
+    "url": "https://help.salesforce.com/articleView?id=sf.technical_requirements_measuring_ept.htm&type=5",
+    "source": "help",
+    "offline": "script",
+    "section": "Evaluate Current System Landscape",
+    "file": "evaluate-current-system-landscape__measure-performance-for-your-salesforce-org.html",
+    "status": "ok",
+    "bytes": 203243
+  },
+  {
+    "type": "link",
+    "title": "Salesforce to Salesforce",
+    "url": "https://help.salesforce.com/articleView?id=sf.business_network_intro.htm&type=5",
+    "source": "help",
+    "offline": "script",
+    "section": "Evaluate Current System Landscape",
+    "file": "evaluate-current-system-landscape__salesforce-to-salesforce.html",
+    "status": "ok",
+    "bytes": 203243
+  },
+  {
+    "type": "link",
+    "title": "Certificates and Keys",
+    "url": "https://help.salesforce.com/articleView?id=security_keys_about.htm&type=0",
+    "source": "help",
+    "offline": "script",
+    "section": "Translate needs to Integration Requirements",
+    "file": "translate-needs-to-integration-requirements__certificates-and-keys.html",
+    "status": "ok",
+    "bytes": 203243
+  },
+  {
+    "type": "link",
+    "title": "Configure Remote Site Settings",
+    "url": "https://help.salesforce.com/articleView?id=configuring_remoteproxy.htm&type=0",
+    "source": "help",
+    "offline": "script",
+    "section": "Translate needs to Integration Requirements",
+    "file": "translate-needs-to-integration-requirements__configure-remote-site-settings.html",
+    "status": "ok",
+    "bytes": 203243
+  },
+  {
+    "type": "link",
+    "title": "Integration Patterns and best practices",
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.integration_patterns_and_practices.meta/integration_patterns_and_practices/integ_pat_intro_overview.htm",
+    "source": "developer",
+    "offline": "script",
+    "priority": "high",
+    "section": "Design Integration Solutions",
+    "file": "design-integration-solutions__integration-patterns-and-best-practices.html",
+    "status": "ok",
+    "bytes": 217036
+  },
+  {
+    "type": "link",
+    "title": "Send an Outbound Message from Record-Triggered Flow",
+    "url": "https://help.salesforce.com/s/articleView?id=release-notes.rn_automate_flow_builder_outbound_message.htm&release=234&type=5",
+    "source": "help",
+    "offline": "script",
+    "section": "Design Integration Solutions",
+    "file": "design-integration-solutions__send-an-outbound-message-from-record-triggered-flow.html",
+    "status": "ok",
+    "bytes": 203243
+  },
+  {
+    "type": "link",
+    "title": "Canvas Developer Guide",
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.platform_connect.meta/platform_connect/canvas_framework_intro.htm",
+    "source": "developer",
+    "offline": "script",
+    "section": "Design Integration Solutions",
+    "file": "design-integration-solutions__canvas-developer-guide.html",
+    "status": "ok",
+    "bytes": 17872
+  },
+  {
+    "type": "link",
+    "title": "Access External Data With Salesforce Connect",
+    "url": "https://help.salesforce.com/articleView?id=sf.salesforce_connect.htm&type=5",
+    "source": "help",
+    "offline": "script",
+    "section": "Build Solution",
+    "file": "build-solution__access-external-data-with-salesforce-connect.html",
+    "status": "ok",
+    "bytes": 203243
+  },
+  {
+    "type": "link",
+    "title": "Security Considerations (Integration Patterns)",
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.integration_patterns_and_practices.meta/integration_patterns_and_practices/integ_pat_security_considerations.htm",
+    "source": "developer",
+    "offline": "script",
+    "priority": "high",
+    "section": "Additional Preparation",
+    "file": "additional-preparation__security-considerations-integration-patterns.html",
+    "status": "ok",
+    "bytes": 216948
+  },
+  {
+    "type": "link",
+    "title": "What is GraphQL API?",
+    "url": "https://developer.salesforce.com/docs/platform/graphql/guide/intro-graphql-api.html",
+    "source": "developer",
+    "offline": "script",
+    "section": "Additional Preparation",
+    "file": "additional-preparation__what-is-graphql-api.html",
+    "status": "ok",
+    "bytes": 36970
+  }
+]

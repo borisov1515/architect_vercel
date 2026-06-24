@@ -19,6 +19,9 @@ export default function TheoryPage() {
   return (
     <div className="space-y-6">
       <h1 className="text-2xl font-bold">Теория</h1>
+      <Link to="/trailmix" className="block p-5 bg-sf-blue/10 dark:bg-sf-blue/20 rounded-xl border border-sf-blue/30 font-semibold text-sf-blue">
+        📚 Полный Trailmix (29 материалов, Trailhead + docs)
+      </Link>
       <Link to="/theory/00-patterns-cheatsheet" className="block p-5 bg-amber-50 dark:bg-amber-950/30 rounded-xl border border-amber-200 dark:border-amber-800 font-semibold">
         📋 Шпаргалка паттернов интеграции
       </Link>

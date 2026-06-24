@@ -1,0 +1,107 @@
+[
+  {
+    "order": 4,
+    "prefix": "004-explore-integration-patterns-and-practices",
+    "type": "trail",
+    "title": "Explore Integration Patterns and Practices",
+    "url": "https://trailhead.salesforce.com/content/learn/trails/explore-integration-patterns-and-practices"
+  },
+  {
+    "order": 9,
+    "prefix": "009-secure-secrets-storage",
+    "type": "module",
+    "title": "Secure Secrets Storage",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/secure-secrets-storage"
+  },
+  {
+    "order": 10,
+    "prefix": "010-change-data-capture-basics",
+    "type": "module",
+    "title": "Change Data Capture Basics",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/change-data-capture"
+  },
+  {
+    "order": 12,
+    "prefix": "012-application-integration-patterns-for-salesforce-lightning-platform",
+    "type": "module",
+    "title": "Application Integration Patterns for Salesforce Lightning Platform",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/app-integration-patterns"
+  },
+  {
+    "order": 15,
+    "prefix": "015-quick-start-salesforce-connect",
+    "type": "project",
+    "title": "Quick Start: Salesforce Connect",
+    "url": "https://trailhead.salesforce.com/content/learn/projects/quickstart-lightning-connect"
+  },
+  {
+    "order": 16,
+    "prefix": "016-external-services",
+    "type": "module",
+    "title": "External Services",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/external-services"
+  },
+  {
+    "order": 17,
+    "prefix": "017-api-planning-framework-for-architects",
+    "type": "module",
+    "title": "API Planning Framework for Architects",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/design-with-the-right-api"
+  },
+  {
+    "order": 18,
+    "prefix": "018-api-led-integration-for-business-reinvention",
+    "type": "module",
+    "title": "API-Led Integration for Business Reinvention",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/api-led-integration-for-business-reinvention"
+  },
+  {
+    "order": 19,
+    "prefix": "019-platform-events-basics",
+    "type": "module",
+    "title": "Platform Events Basics",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/platform_events_basics"
+  },
+  {
+    "order": 21,
+    "prefix": "021-large-data-volumes",
+    "type": "module",
+    "title": "Large Data Volumes",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/large-data-volumes"
+  },
+  {
+    "order": 22,
+    "prefix": "022-apex-integration-services",
+    "type": "module",
+    "title": "Apex Integration Services",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/apex_integration_services"
+  },
+  {
+    "order": 23,
+    "prefix": "023-salesforce-heroku-integration",
+    "type": "module",
+    "title": "Salesforce & Heroku Integration",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/salesforce_heroku_integration"
+  },
+  {
+    "order": 24,
+    "prefix": "024-api-lifecycle-management-with-anypoint-platform",
+    "type": "module",
+    "title": "API Lifecycle Management with Anypoint Platform",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/mulesoft-basics"
+  },
+  {
+    "order": 26,
+    "prefix": "026-event-monitoring",
+    "type": "module",
+    "title": "Event Monitoring",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/event_monitoring"
+  },
+  {
+    "order": 27,
+    "prefix": "027-salesforce-b2c-commerce-third-party-integration-strategies",
+    "type": "module",
+    "title": "Salesforce B2C Commerce Third-Party Integration Strategies",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/b2c-integration-approaches"
+  }
+]

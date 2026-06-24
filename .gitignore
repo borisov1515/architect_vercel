@@ -1,5 +1,10 @@
 node_modules
 dist
+public/materials
+public/data/trailmix-index.json
+materials/trailmix/trailhead/_progress/cdp/
+materials/trailmix/trailhead/_scripts/
 .DS_Store
 *.local
 .vite
+materials/trailmix/.tmp-*.json

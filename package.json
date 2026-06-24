@@ -8,7 +8,10 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "import:sets": "node scripts/import-sets.mjs",
-    "prebuild": "npm run import:sets"
+    "copy:trailmix": "node scripts/copy-trailmix.mjs",
+    "fetch:trailmix": "node materials/trailmix/fetch-public-docs.mjs",
+    "prebuild": "npm run import:sets && npm run copy:trailmix",
+    "predev": "npm run copy:trailmix"
   },
   "dependencies": {
     "fuse.js": "^7.1.0",

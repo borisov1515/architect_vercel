@@ -26,7 +26,7 @@ export default defineConfig({
         ],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,json,md}'],
+        globPatterns: ['**/*.{js,css,html,svg,json,md}', 'materials/trailmix/**/*.{html,md}'],
       },
     }),
   ],

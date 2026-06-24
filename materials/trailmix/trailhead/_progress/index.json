@@ -1,0 +1,43 @@
+{
+  "startedAt": "2026-06-23",
+  "lastUpdated": "2026-06-24",
+  "summary": {
+    "totalManifestItems": 30,
+    "htmlSaved": 14,
+    "trailheadModulesDone": 18,
+    "trailheadModulesPending": 0
+  },
+  "completed": [
+    { "order": 1, "title": "Certification Exam Guide", "file": "001-certification-exam-guide.md", "status": "done" },
+    { "order": 2, "title": "Measure Performance", "file": "002-measure-performance-for-your-salesforce-org.html", "status": "done" },
+    { "order": 3, "title": "Salesforce to Salesforce", "file": "003-salesforce-to-salesforce.html", "status": "done" },
+    { "order": 4, "title": "Explore Integration Patterns Trail", "file": "004-explore-integration-patterns-and-practices/", "status": "done" },
+    { "order": 5, "title": "Evaluate business needs", "status": "skipped" },
+    { "order": 6, "title": "Governance blog", "file": "006-governance-successful-salesforce-implementation.html", "status": "done" },
+    { "order": 7, "title": "Certificates and Keys", "file": "007-certificates-and-keys.html", "status": "done" },
+    { "order": 8, "title": "Configure Remote Site Settings", "file": "008-configure-remote-site-settings.html", "status": "done" },
+    { "order": 9, "title": "Secure Secrets Storage", "file": "009-secure-secrets-storage/", "status": "done", "units": 3 },
+    { "order": 10, "title": "Change Data Capture Basics", "file": "010-change-data-capture/", "status": "done", "units": 5 },
+    { "order": 11, "title": "Integration Patterns developer doc", "file": "011-integration-patterns-and-best-practices.html", "status": "done" },
+    { "order": 12, "title": "App Integration Patterns", "file": "012-application-integration-patterns-for-salesforce-lightning-platform/", "status": "done", "units": 3 },
+    { "order": 13, "title": "Outbound Message Flow", "file": "013-send-an-outbound-message-from-record-triggered-flow.html", "status": "done" },
+    { "order": 14, "title": "Canvas Developer Guide", "file": "014-canvas-developer-guide.html", "status": "done" },
+    { "order": 15, "title": "Quick Start: Salesforce Connect", "file": "015-quick-start-salesforce-connect/", "status": "done", "steps": 4 },
+    { "order": 16, "title": "External Services", "file": "016-external-services/", "status": "done", "units": 2 },
+    { "order": 17, "title": "API Planning Framework for Architects", "file": "017-api-planning-framework-for-architects/", "status": "done", "units": 4 },
+    { "order": 18, "title": "API-Led Integration for Business Reinvention", "file": "018-api-led-integration-for-business-reinvention/", "status": "done", "units": 4 },
+    { "order": 19, "title": "Platform Events Basics", "file": "019-platform-events-basics/", "status": "done", "units": 3 },
+    { "order": 20, "title": "Salesforce Connect help", "file": "020-access-external-data-with-salesforce-connect.html", "status": "done" },
+    { "order": 21, "title": "Large Data Volumes", "file": "021-large-data-volumes/", "status": "done", "units": 4 },
+    { "order": 22, "title": "Apex Integration Services", "file": "022-apex-integration-services/", "status": "done", "units": 4 },
+    { "order": 23, "title": "Salesforce & Heroku Integration", "file": "023-salesforce-heroku-integration/", "status": "done", "units": 5 },
+    { "order": 24, "title": "API Lifecycle Management (MuleSoft)", "file": "024-api-lifecycle-management-with-anypoint-platform/", "status": "done", "units": 2 },
+    { "order": 25, "title": "Data Integration Guide", "file": "025-data-integration-decision-guide.html", "status": "done" },
+    { "order": 26, "title": "Event Monitoring", "file": "026-event-monitoring/", "status": "done", "units": 3, "notes": "duplicate unit-01/02/03 filenames on disk" },
+    { "order": 27, "title": "B2C Commerce Integration Strategies", "file": "027-b2c-integration-approaches/", "status": "done", "units": 6 },
+    { "order": 28, "title": "Security Considerations", "file": "028-security-considerations-integration-patterns.html", "status": "done" },
+    { "order": 29, "title": "GraphQL blog", "file": "029-introducing-salesforce-graphql-api.html", "status": "done" },
+    { "order": 30, "title": "What is GraphQL API", "file": "030-what-is-graphql-api.html", "status": "done" }
+  ],
+  "pending": []
+}

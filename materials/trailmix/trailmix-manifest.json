@@ -1,0 +1,108 @@
+{
+  "title": "Prepare for your Platform Integration Architect Certification",
+  "source": "https://trailhead.salesforce.com/users/strailhead/trailmixes/architect-integration-architecture",
+  "examGuide": "https://trailhead.salesforce.com/help?article=Salesforce-Certified-Platform-Integration-Architect-Exam-Guide",
+  "sections": [
+    {
+      "id": "evaluate-landscape",
+      "title": "Evaluate Current System Landscape",
+      "examWeight": "8%",
+      "items": [
+        { "type": "task", "title": "Certification Exam Guide", "url": "https://trailhead.salesforce.com/help?article=Salesforce-Certified-Platform-Integration-Architect-Exam-Guide", "source": "trailhead", "offline": "singlefile" },
+        { "type": "link", "title": "Measure Performance for Your Salesforce Org", "url": "https://help.salesforce.com/articleView?id=sf.technical_requirements_measuring_ept.htm&type=5", "source": "help", "offline": "script" },
+        { "type": "link", "title": "Salesforce to Salesforce", "url": "https://help.salesforce.com/articleView?id=sf.business_network_intro.htm&type=5", "source": "help", "offline": "script" },
+        { "type": "trail", "title": "Explore Integration Patterns and Practices", "url": "https://trailhead.salesforce.com/content/learn/trails/explore-integration-patterns-and-practices", "source": "trailhead", "offline": "trailhead-go-or-singlefile", "duration": "~2h 10m" }
+      ]
+    },
+    {
+      "id": "evaluate-business",
+      "title": "Evaluate business needs",
+      "examWeight": "11%",
+      "items": [
+        { "type": "task", "title": "Evaluate business needs", "url": "https://trailhead.salesforce.com/users/strailhead/trailmixes/architect-integration-architecture", "source": "trailhead", "offline": "login-required" },
+        { "type": "link", "title": "Key Principles for a Successful Salesforce Implementation Part III: Governance", "url": "https://www.salesforce.com/blog/governance-successful-salesforce-implementation/", "source": "blog", "offline": "singlefile", "note": "Search blog if URL moved" }
+      ]
+    },
+    {
+      "id": "translate-requirements",
+      "title": "Translate needs to Integration Requirements",
+      "examWeight": "22%",
+      "items": [
+        { "type": "link", "title": "Certificates and Keys", "url": "https://help.salesforce.com/articleView?id=security_keys_about.htm&type=0", "source": "help", "offline": "script" },
+        { "type": "link", "title": "Configure Remote Site Settings", "url": "https://help.salesforce.com/articleView?id=configuring_remoteproxy.htm&type=0", "source": "help", "offline": "script" },
+        { "type": "module", "title": "Secure Secrets Storage", "url": "https://trailhead.salesforce.com/content/learn/modules/secure-secrets-storage", "source": "trailhead", "offline": "trailhead-go-or-singlefile", "duration": "~25m" },
+        { "type": "module", "title": "Change Data Capture Basics", "url": "https://trailhead.salesforce.com/content/learn/modules/change-data-capture", "source": "trailhead", "offline": "trailhead-go-or-singlefile", "duration": "~1h 25m" }
+      ]
+    },
+    {
+      "id": "design-solutions",
+      "title": "Design Integration Solutions",
+      "examWeight": "28%",
+      "items": [
+        { "type": "link", "title": "Integration Patterns and best practices", "url": "https://developer.salesforce.com/docs/atlas.en-us.integration_patterns_and_practices.meta/integration_patterns_and_practices/integ_pat_intro_overview.htm", "source": "developer", "offline": "script", "priority": "high" },
+        { "type": "module", "title": "Application Integration Patterns for Salesforce Lightning Platform", "url": "https://trailhead.salesforce.com/content/learn/modules/app-integration-patterns", "source": "trailhead", "offline": "trailhead-go-or-singlefile", "duration": "~1h 20m" },
+        { "type": "link", "title": "Send an Outbound Message from Record-Triggered Flow", "url": "https://help.salesforce.com/s/articleView?id=release-notes.rn_automate_flow_builder_outbound_message.htm&release=234&type=5", "source": "help", "offline": "script" },
+        { "type": "link", "title": "Canvas Developer Guide", "url": "https://developer.salesforce.com/docs/atlas.en-us.platform_connect.meta/platform_connect/canvas_framework_intro.htm", "source": "developer", "offline": "script" },
+        { "type": "project", "title": "Quick Start: Salesforce Connect", "url": "https://trailhead.salesforce.com/content/learn/projects/quickstart-lightning-connect", "source": "trailhead", "offline": "singlefile-desktop", "duration": "~20m", "note": "Hands-on — только на desktop" },
+        { "type": "module", "title": "External Services", "url": "https://trailhead.salesforce.com/content/learn/modules/external-services", "source": "trailhead", "offline": "trailhead-go-or-singlefile", "duration": "~25m" },
+        { "type": "module", "title": "API Planning Framework for Architects", "url": "https://trailhead.salesforce.com/content/learn/modules/design-with-the-right-api", "source": "trailhead", "offline": "trailhead-go-or-singlefile", "duration": "~20m" }
+      ]
+    },
+    {
+      "id": "build-solution",
+      "title": "Build Solution",
+      "examWeight": "23%",
+      "items": [
+        { "type": "module", "title": "API-Led Integration for Business Reinvention", "url": "https://trailhead.salesforce.com/content/learn/modules/api-led-integration-for-business-reinvention", "source": "trailhead", "offline": "trailhead-go-or-singlefile", "duration": "~25m" },
+        { "type": "module", "title": "Platform Events Basics", "url": "https://trailhead.salesforce.com/content/learn/modules/platform_events_basics", "source": "trailhead", "offline": "trailhead-go-or-singlefile", "duration": "~50m" },
+        { "type": "link", "title": "Access External Data With Salesforce Connect", "url": "https://help.salesforce.com/articleView?id=sf.salesforce_connect.htm&type=5", "source": "help", "offline": "script" },
+        { "type": "module", "title": "Large Data Volumes", "url": "https://trailhead.salesforce.com/content/learn/modules/large-data-volumes", "source": "trailhead", "offline": "trailhead-go-or-singlefile", "duration": "~1h 20m" },
+        { "type": "module", "title": "Apex Integration Services", "url": "https://trailhead.salesforce.com/content/learn/modules/apex_integration_services", "source": "trailhead", "offline": "singlefile-desktop", "duration": "~2h", "note": "Hands-on Apex" },
+        { "type": "module", "title": "Salesforce & Heroku Integration", "url": "https://trailhead.salesforce.com/content/learn/modules/salesforce_heroku_integration", "source": "trailhead", "offline": "trailhead-go-or-singlefile", "duration": "~50m" },
+        { "type": "module", "title": "API Lifecycle Management with Anypoint Platform", "url": "https://trailhead.salesforce.com/content/learn/modules/mulesoft-basics", "source": "trailhead", "offline": "trailhead-go-or-singlefile", "duration": "~20m" }
+      ]
+    },
+    {
+      "id": "maintain-integration",
+      "title": "Maintain Integration",
+      "examWeight": "8%",
+      "items": [
+        { "type": "link", "title": "Data Integration Guide", "url": "https://architect.salesforce.com/decision-guides/data-integration", "source": "architect", "offline": "singlefile" },
+        { "type": "module", "title": "Event Monitoring", "url": "https://trailhead.salesforce.com/content/learn/modules/event_monitoring", "source": "trailhead", "offline": "trailhead-go-or-singlefile", "duration": "~35m" },
+        { "type": "module", "title": "Salesforce B2C Commerce Third-Party Integration Strategies", "url": "https://trailhead.salesforce.com/content/learn/modules/b2c-integration-approaches", "source": "trailhead", "offline": "trailhead-go-or-singlefile", "duration": "~1h" }
+      ]
+    },
+    {
+      "id": "additional",
+      "title": "Additional Preparation",
+      "items": [
+        { "type": "link", "title": "Security Considerations (Integration Patterns)", "url": "https://developer.salesforce.com/docs/atlas.en-us.integration_patterns_and_practices.meta/integration_patterns_and_practices/integ_pat_security_considerations.htm", "source": "developer", "offline": "script", "priority": "high" },
+        { "type": "link", "title": "Introducing the Salesforce GraphQL API (blog)", "url": "https://developer.salesforce.com/blogs/2022/03/introducing-the-salesforce-graphql-api", "source": "developer", "offline": "singlefile" },
+        { "type": "link", "title": "What is GraphQL API?", "url": "https://developer.salesforce.com/docs/platform/graphql/guide/intro-graphql-api.html", "source": "developer", "offline": "script" }
+      ]
+    }
+  ],
+  "trailheadModules": [
+    "explore-integration-patterns-and-practices",
+    "secure-secrets-storage",
+    "change-data-capture",
+    "app-integration-patterns",
+    "quickstart-lightning-connect",
+    "external-services",
+    "design-with-the-right-api",
+    "api-led-integration-for-business-reinvention",
+    "platform_events_basics",
+    "large-data-volumes",
+    "apex_integration_services",
+    "salesforce_heroku_integration",
+    "mulesoft-basics",
+    "event_monitoring",
+    "b2c-integration-approaches"
+  ],
+  "offlineMethods": {
+    "script": "npm run fetch:trailmix — публичные help/developer страницы",
+    "trailhead-go": "Официальное приложение Trailhead GO — скачать модули офлайн (без hands-on)",
+    "singlefile": "Расширение SingleFile — сохранить страницу как один HTML (нужен логин Trailhead)",
+    "singlefile-desktop": "SingleFile на desktop — для units с hands-on challenge"
+  }
+}

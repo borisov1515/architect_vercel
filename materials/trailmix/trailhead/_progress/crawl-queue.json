@@ -1,0 +1,60 @@
+{
+  "modules": [
+    {
+      "id": "018",
+      "folder": "018-api-led-integration-for-business-reinvention",
+      "slug": "api-led-integration-for-business-reinvention",
+      "title": "API-Led Integration for Business Reinvention",
+      "url": "https://trailhead.salesforce.com/content/learn/modules/api-led-integration-for-business-reinvention"
+    },
+    {
+      "id": "019",
+      "folder": "019-platform-events-basics",
+      "slug": "platform_events_basics",
+      "title": "Platform Events Basics",
+      "url": "https://trailhead.salesforce.com/content/learn/modules/platform_events_basics"
+    },
+    {
+      "id": "021",
+      "folder": "021-large-data-volumes",
+      "slug": "large-data-volumes",
+      "title": "Large Data Volumes",
+      "url": "https://trailhead.salesforce.com/content/learn/modules/large-data-volumes"
+    },
+    {
+      "id": "022",
+      "folder": "022-apex-integration-services",
+      "slug": "apex_integration_services",
+      "title": "Apex Integration Services",
+      "url": "https://trailhead.salesforce.com/content/learn/modules/apex_integration_services"
+    },
+    {
+      "id": "023",
+      "folder": "023-salesforce-heroku-integration",
+      "slug": "salesforce_heroku_integration",
+      "title": "Salesforce & Heroku Integration",
+      "url": "https://trailhead.salesforce.com/content/learn/modules/salesforce_heroku_integration"
+    },
+    {
+      "id": "024",
+      "folder": "024-api-lifecycle-management-with-anypoint-platform",
+      "slug": "mulesoft-basics",
+      "title": "API Lifecycle Management with Anypoint Platform",
+      "url": "https://trailhead.salesforce.com/content/learn/modules/mulesoft-basics"
+    },
+    {
+      "id": "026",
+      "folder": "026-event-monitoring",
+      "slug": "event_monitoring",
+      "title": "Event Monitoring",
+      "url": "https://trailhead.salesforce.com/content/learn/modules/event_monitoring"
+    },
+    {
+      "id": "027",
+      "folder": "027-b2c-integration-approaches",
+      "slug": "b2c-integration-approaches",
+      "title": "Salesforce B2C Commerce Third-Party Integration Strategies",
+      "url": "https://trailhead.salesforce.com/content/learn/modules/b2c-integration-approaches"
+    }
+  ]
+}

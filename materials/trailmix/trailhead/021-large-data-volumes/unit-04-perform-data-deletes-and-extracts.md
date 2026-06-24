@@ -1,0 +1,80 @@
+# Optimize Data Management with Bulk API
+
+**Module:** Large Data Volumes  
+**Source:** https://trailhead.salesforce.com/content/learn/modules/large-data-volumes/perform-data-deletes-and-extracts  
+**Saved:** browser extraction (logged-in session)
+
+---
+
+Learning Objectives
+
+After completing this unit, you’ll be able to:
+
+Use the Salesforce Bulk API data deletion mechanism to positively affect performance when working with large data volumes.
+
+Use PK chunking to combat slow performance when extracting large amounts of data from your org.
+
+Understand the benefits of truncating records under custom objects to speed deletion.
+
+Deletion and Extraction with Bulk API
+
+When it comes to your Salesforce org, data management is always at the top of your list of priorities. Part of this management involves deleting and extracting data. And, just as with loading large data volumes, Bulk API is useful when it comes to deleting or extracting LDV. When there’s a process that involves deleting one million or more records, the hard delete option of Bulk API can do the trick.
+
+Soft vs. Hard Deletion
+
+The Salesforce data deletion mechanism can have a profound effect on the performance of large data volumes. Salesforce uses a Recycle Bin for data that users delete. Instead of removing the data, it’s flagged as deleted and visible through the Recycle Bin. This process is called soft deletion. When data is soft deleted, it still affects database performance because it’s still living in the org, and deleted records have to be excluded from any queries.
+
+The data stays in the Recycle Bin for 15 days, or until the Recycle Bin grows to a specific size. The data is then physically deleted from the database once time or size limits are reached, or when the Recycle Bin is emptied using the UI, the API, or Apex.
+
+Bulk API supports a hard delete (physical delete) option, which allows records to bypass the Recycle Bin and immediately become available for deletion. Using Bulk API’s hard delete function is a recommended strategy for deleting large data volumes to free up space sooner and keep extraneous material from affecting performance. Note that the hard delete option is disabled by default and must be enabled by an administrator.
+
+Chunking Data
+
+When extracting data with Bulk API, queries are split into 100,000 record chunks by default—you can use the chunkSize header field to configure smaller chunks, or larger ones up to 250,000. Larger chunk sizes use up fewer Bulk API batches, but may not perform as well. You might need to experiment a bit to determine the optimal chunk size.
+
+At extremely high volumes—hundreds of millions of records—defining these chunks by filtering on field values may not be practical. The number of rows that are returned may be higher than the selectivity threshold of Salesforce’s query optimizer. The result could be a full table scan and slow performance, or even failure. Then you need to employ a different strategy.
+
+Using PK Chunking
+
+So if attribute filtering doesn’t help you break the data up into small enough chunks, what can you do? Use PK Chunking to handle extra-large data set extracts. PK stands for Primary Key—the object’s record ID—which is always indexed. PK chunking splits bulk queries on very large tables into chunks based on the record IDs of the queried records.
+
+Enable PK chunking when querying tables with more than 10 million records or when a bulk query consistently times out. PK Chunking is a supported feature of the Salesforce Bulk API, so it does all the work of splitting the queries into manageable chunks. Just enter a few parameters on your Bulk API job, and the platform automatically splits the query into separate chunks, executes a query for each chunk, and returns the data.
+
+You can use PK Chunking with most standard objects. It’s supported for Account, Campaign, CampaignMember, Case, Contact, Lead, LoginHistory, Opportunity, Task, and User, as well as all custom objects. To enable the feature, specify the header Sforce-Enable-PKChunking on the job request for your Bulk API query.
+
+To choose a chunk size, simply specify it in the header. For example, this header enables PK chunking with a chunk size of 50,000 records: Sforce-Enable-PKChunking: chunkSize=50000. Each chunk is processed as a separate batch that counts toward your daily batch limit, and its results must be downloaded separately. You can perform filtering while using PK Chunking by including a WHERE clause in the Bulk API query. Using this method, there may be fewer records returned for a chunk than the number you have specified in chunkSize.
+
+If you’re querying significantly fewer records than 10 million, you can practice PK chunking by setting chunkSize to a number smaller than the number of records you’re querying. For example, Sforce-Enable-PKChunking: chunkSize=1000. You’ll get a query split into multiple batches—and get to see PK Chunking in action.
+
+When a query is successfully chunked, the original batch’s status shows as NOT_PROCESSED. If the chunking fails, the original batch’s status shows as FAILED, but any chunked batches that were successfully queued during the chunking attempt are processed as normal. When the original batch’s status is changed to NOT_PROCESSED, monitor the subsequent batches. You can retrieve the results from each subsequent batch after it’s completed. Then you can safely close the job.
+
+Truncation
+
+If you want to delete records in a sandbox org’s custom objects immediately, you can try truncating those custom objects. Truncating custom objects is a fast way to permanently remove all the records from a custom object, while keeping the object and its metadata intact for future use.
+
+Truncating a custom object erases all records currently sitting in the custom object’s Recycle Bin; the custom object’s history; and related events, tasks, notes, and attachments for each deleted record.
+
+Truncating custom objects causes some irreversible changes to the truncated object and its records. They cannot be returned to their original state.
+
+Truncating is useful, for example, if you have created a custom object and filled it with test records. When you’re done with the test data, you can truncate the object to purge the test records, but keep the object and put it into production. This is much faster than batch-deleting records and possibly recreating the object.
+
+Here’s the simple setup process.
+
+In Setup, in the Quick Find box, enter User Interface and then select User Interface (note: it is at the very bottom of the list).
+
+In the Setup section (between Name Settings and Advanced), add a check to Enable Custom Object Truncate.
+
+Click Save.
+
+Truncating a custom object permanently removes all of its records. You can’t recover the records from the Recycle Bin. A copy of the truncated object appears in the Deleted Objects list for 15 days—during this period the object and its records continue to count toward your organization’s limits—and then the copied object and its records are permanently deleted.
+
+You can’t truncate standard objects or custom objects that are referenced by another object through a lookup field, or that are on the master side of a master-detail relationship, are referenced in a reporting snapshot, have a custom index or an external ID, or have activated skinny tables. And you can’t truncate custom objects when your org has reached its limit on allowed custom objects.
+
+Using strategies like truncation, along with PK chunking and the Bulk API’s hard delete, helps you keep large data volumes from mucking up your org. Employing these regularly, and as needed, is a wise practice for maintaining robust performance.
+
+Resources
+Salesforce Developer: Extracting Large Data Volumes (LDV) in Force.com
+Salesforce Developer: Use PK Chunking to Extract Large Data Sets from Salesforce
+Salesforce Developer: PK Chunking Header
+Salesforce Help: Truncate Custom Objects
+Salesforce Developer: Walk Through a Bulk Query Sample Using PK Chunking

@@ -6,6 +6,7 @@ const NAV = [
   { to: '/', label: 'Главная' },
   { to: '/sets', label: 'Сеты' },
   { to: '/theory', label: 'Теория' },
+  { to: '/trailmix', label: 'Trailmix' },
   { to: '/glossary', label: 'Глоссарий' },
   { to: '/blueprint', label: 'Blueprint' },
   { to: '/stats', label: 'Статистика' },

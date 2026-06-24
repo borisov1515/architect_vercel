@@ -15,6 +15,8 @@ import BlueprintPage from '@/pages/BlueprintPage';
 import SettingsPage from '@/pages/SettingsPage';
 import SearchPage from '@/pages/SearchPage';
 import HistoryPage from '@/pages/HistoryPage';
+import TrailmixPage from '@/pages/TrailmixPage';
+import TrailmixReadPage from '@/pages/TrailmixReadPage';
 
 export default function App() {
   const init = useAppStore((s) => s.init);
@@ -42,6 +44,8 @@ export default function App() {
         <Route path="/settings" element={<SettingsPage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/history" element={<HistoryPage />} />
+        <Route path="/trailmix" element={<TrailmixPage />} />
+        <Route path="/trailmix/read/*" element={<TrailmixReadPage />} />
       </Routes>
     </Layout>
   );

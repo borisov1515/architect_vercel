@@ -1,0 +1,1226 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#ffffff">
+        
+        
+            <title>Data Integration with Salesforce | Integration Decision Guides | Decision Guides | Salesforce Developers</title>
+            
+            
+                <meta name="title" content="Salesforce Architects"/>
+            
+                <meta name="description" content="There are a multitude of ways to access, synchronize, and share data between Salesforce and external systems. But not every tool is right for your par"/>
+            
+                <meta name="google-site-verification" content="9nBLHedRs97kceoTtOMsUGrVIhNfsJHbExzaKVARgAM"/>
+            
+                <meta name="project" content="decision-guides"/>
+            
+                <meta name="nav-title" content="Data Integration with Salesforce | Integration Decision Guides"/>
+            
+            
+        
+
+        <link rel="stylesheet" href="/1/asset/immutable/s/17818981540000000/assets/css/main.css" />
+
+        
+    
+    <link rel="stylesheet" href="/1/asset/immutable/s/17818981540000000/assets/css/content-types/guide.css"/>
+
+
+        
+        
+        
+        <link rel="canonical" href="https://architect.salesforce.com/docs/architect/decision-guides/guide/data-integration.html"/>
+
+        
+        <link rel="icon" href="/ns-assets/favicons/favicon-32x32.png" />
+    
+<script>(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"","rua.cook":"false","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false","rua.isuxp":"false","rua.texp":"norulematch","rua.ceh":"false","rua.ueh":"false","rua.ieh.st":"0"}]);</script>
+                                <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="GWVF3-9TVK8-SKGB7-U5UVP-94KZ6",function(){function e(){if(!i){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,o.parentNode.appendChild(e),i=!0}}function t(e){i=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(o.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",o.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"GWVF3-9TVK8-SKGB7-U5UVP-94KZ6";var o=document.currentScript||document.getElementsByTagName("script")[0],i=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!i)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),o.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="xg4tplyccbmiw2r2tuqq-f-1e8fdf89f-clientnsv4-s.akamaihd.net",o="false"=="true"?2:1,i={"ak.v":"41","ak.cp":"1931973","ak.ai":parseInt("1288363",10),"ak.ol":"0","ak.cr":17,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"e2829a2","ak.r":47359,"ak.a2":n,"ak.m":"dsca","ak.n":"essl","ak.cport":10092,"ak.gh":"2.16.64.139","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"bbr","ak.t":"1782226209","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==4tDUKpCzaWgIyMZh6Om7eE+CmeEdZQGdfSon59azeEy4aopnI8ggf6ccGvufd2MkES2E/aW0PTBxHLBOor/GrYh3jQOEYl/0+vpLw8UhKHhbVuB59aeaoTjQDNxSMnOujp0tSelVyXCawZz96196dh3aq7b0q7t3f8oxCbm8MGPOaR3S7ieFq95LOFHAWKSDT7Pb2ySUuAlJ8QzrD5pVEj6lO8oLIs+r9ZxQoQEGtWoKUK2ttZcIq9/k4j3R347ZNGkor2W73YPRqCkcQuSaafCYeU2Phoy8OwjXrn1hCgoBjmzmp9nmmyiNMqY5N47g0OK/ZCAkyfz7PBEGj0il0plDQAb4di/dbQJtcjvyyMYsvJMvcXpGUfKnaFsrCk6hvGiei+w/mFHomK3hXVL1OBBfNe72b2waPsTBVUKV0Sw=","ak.pv":"21","ak.dpoabenc":"","ak.tf":o};if(""!==t)i["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))i["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(i)},rv:function(){var e=["ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.0rtt.ed","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:i,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+
+    <body>
+        <dx-scroll-manager></dx-scroll-manager>
+
+        <div class="slds-grid slds-grid_vertical">
+            <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      
+      Data Integration with Salesforce | Integration Decision Guides
+       | </title>
+    <!-- One Trust  -->
+    <script async type="text/javascript" src="https://a.sfdcstatic.com/digital/one-trust/core/stable/scripttemplates/otSDKStub.js" data-domain-script="8e783e8c-0ad0-475d-8fca-4a03afa0a02a" crossorigin ></script>
+
+    <!-- Global/Context Navigation MFE -->
+    
+      <script type="module" src="https://c.salesforce.com/digital/xsf/components/v1-latest/navs.js"></script>
+    
+
+    <!-- Data Cloud Manager -->
+    <script type="text/javascript" src="" defer></script>
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer'
+            ? '&l=' + l
+            : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f
+          .parentNode
+          .insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-MPDHG6B');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/ns-assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/ns-assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/ns-assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/1/asset/immutable/s/17818981540000000/assets/site.webmanifest" crossorigin="use-credentials">
+    <link rel="mask-icon" href="/ns-assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/ns-assets/favicons/favicon.ico">
+    <link rel="canonical" href="/docs/architect/decision-guides/guide/data-integration.html"/>
+    <meta name="google-site-verification" content="9nBLHedRs97kceoTtOMsUGrVIhNfsJHbExzaKVARgAM">
+    <meta name="google-site-verification" content="GiaTqJgaiTF7nPD6gVxphfKcgFK9leNVs5Wp4mpqoGc"/>
+    <meta name="google-site-verification" content="pWMJx8-rcYCDKC3_WoEdgvQSDVvqM2cql0DcXogrpww" />
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/assets/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:url" content="/docs/architect/decision-guides/guide/data-integration.html">
+    <meta property="og:type" content="website">
+    <meta name="author" content="Salesforce Architects">
+    <meta name="title" property="og:title" content=" | Data Integration with Salesforce | Integration Decision Guides">
+    <meta name="description" property="og:description" content="Choose the right tools for building data-layer integrations with Salesforce.">
+    <meta name="image" property="og:image" content="https://a.sfdcstatic.com/developer-website/prod/images/architect/Data%20Integration.png">
+    <meta property="og:image:url" content="https://a.sfdcstatic.com/developer-website/prod/images/architect/Data%20Integration.png">
+    <meta name="twitter:image" content="https://a.sfdcstatic.com/developer-website/prod/images/architect/Data%20Integration.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="">
+    
+  </script>
+  <link rel="preload" href="/1/asset/immutable/s/17818981540000000/assets/css/main.css" as="style">
+  <link rel="stylesheet" href="/1/asset/immutable/s/17818981540000000/assets/css/main.css">
+  <style>
+    .preview {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: linear-gradient(45deg,rgba(0,0,0,.025) 25%,transparent 0,transparent 50%,rgba(0,0,0,.025) 0,rgba(0,0,0,.025) 75%,transparent 0,transparent);
+      background-size: 64px 64px;
+      color: #102c62;
+      background-color: rgb(234, 245, 254);
+      padding: 8px;
+      box-sizing: border-box;
+    }
+
+    .preview a:active,
+    .preview a:hover,
+    .preview a:link,
+    .preview a:visited {
+      color: #0071D1;
+    }
+
+    .preview > span {
+      padding: 0 6px;
+    }
+  </style>
+
+<script>(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"","rua.cook":"false","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false","rua.isuxp":"false","rua.texp":"norulematch","rua.ceh":"false","rua.ueh":"false","rua.ieh.st":"0"}]);</script>
+                                <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="GWVF3-9TVK8-SKGB7-U5UVP-94KZ6",function(){function e(){if(!i){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,o.parentNode.appendChild(e),i=!0}}function t(e){i=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(o.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",o.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"GWVF3-9TVK8-SKGB7-U5UVP-94KZ6";var o=document.currentScript||document.getElementsByTagName("script")[0],i=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!i)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),o.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="xg4tplyccbmiw2r2tuqq-f-1e8fdf89f-clientnsv4-s.akamaihd.net",o="false"=="true"?2:1,i={"ak.v":"41","ak.cp":"1931973","ak.ai":parseInt("1288363",10),"ak.ol":"0","ak.cr":17,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"e2829a2","ak.r":47359,"ak.a2":n,"ak.m":"dsca","ak.n":"essl","ak.cport":10092,"ak.gh":"2.16.64.139","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"bbr","ak.t":"1782226209","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==4tDUKpCzaWgIyMZh6Om7eE+CmeEdZQGdfSon59azeEy4aopnI8ggf6ccGvufd2MkES2E/aW0PTBxHLBOor/GrYh3jQOEYl/0+vpLw8UhKHhbVuB59aeaoTjQDNxSMnOujp0tSelVyXCawZz96196dh3aq7b0q7t3f8oxCbm8MGPOaR3S7ieFq95LOFHAWKSDT7Pb2ySUuAlJ8QzrD5pVEj6lO8oLIs+r9ZxQoQEGtWoKUK2ttZcIq9/k4j3R347ZNGkor2W73YPRqCkcQuSaafCYeU2Phoy8OwjXrn1hCgoBjmzmp9nmmyiNMqY5N47g0OK/ZCAkyfz7PBEGj0il0plDQAb4di/dbQJtcjvyyMYsvJMvcXpGUfKnaFsrCk6hvGiei+w/mFHomK3hXVL1OBBfNe72b2waPsTBVUKV0Sw=","ak.pv":"21","ak.dpoabenc":"","ak.tf":o};if(""!==t)i["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))i["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(i)},rv:function(){var e=["ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.0rtt.ed","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:i,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+<body>
+  <header class="global-nav-container">
+    
+    <dx-global-header domain="https://architect.salesforce.com" locale="en-us"></dx-global-header>
+  </header>
+  <arch-xsf-mfe-events></arch-xsf-mfe-events>
+
+
+            
+                
+
+                
+                    
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    
+
+                    
+
+                    <!-- doc header -->
+                    
+                    <div class="sticky-doc-header context-nav-active">
+                        <doc-header
+                            
+                                scoped-nav-items='
+[
+    
+        {
+            "id": "overview",
+            "label": "Overview",
+            "link": {
+                "href": "/docs/architect/decision-guides/overview"
+            }
+        }
+        
+        ,
+        {
+            "id": "guide",
+            "label": "Guides",
+            "link": {
+                "href": "/docs/architect/decision-guides/guide/get-started-platform-decision-guides.html"
+            }
+        }
+        
+        
+]
+'
+                            
+                            subtitle="Decision Guides"
+                            brand="architect"
+                            
+                                header-href="/docs/architect/decision-guides/overview"
+                            
+                            
+                            
+                            hide-doc-header=""
+                            ></doc-header>
+                    </div>
+                    
+                
+            
+
+            <div class="slds-col main-container">
+                <div class="slds-is-relative">
+                    <main role="main" id="main-content">
+                        
+    
+    
+    
+    
+    <doc-content-layout
+        origin="/en-us/wp-json"
+        show-footer="false"
+        class="content-type content-type-markdown content-type-guide"
+        reading-time="29"
+        toc-aria-level="3"
+        
+            breadcrumbs='
+[
+    
+        { "label": "Integration Decision Guides", "href": "/docs/architect/decision-guides/guide/get-started-integration-decision-guides.html" }
+        
+            ,
+        
+        { "label": "Data Integration", "href": "/docs/architect/decision-guides/guide/data-integration.html" }
+        
+]
+'
+        
+        sidebar-content="[{&quot;label&quot;:&quot;Platform Decision Guides&quot;,&quot;name&quot;:&quot;/docs/architect/decision-guides/guide/get-started-platform-decision-guides.html&quot;,&quot;children&quot;:[{&quot;label&quot;:&quot;Asynchronous Processing&quot;,&quot;name&quot;:&quot;/docs/architect/decision-guides/guide/async-processing.html&quot;,&quot;children&quot;:[],&quot;link&quot;:{&quot;href&quot;:&quot;/docs/architect/decision-guides/guide/async-processing.html&quot;}},{&quot;label&quot;:&quot;Building Forms&quot;,&quot;name&quot;:&quot;/docs/architect/decision-guides/guide/build-forms.html&quot;,&quot;children&quot;:[],&quot;link&quot;:{&quot;href&quot;:&quot;/docs/architect/decision-guides/guide/build-forms.html&quot;}},{&quot;label&quot;:&quot;Determining Agentic and Traditional Workflow Automation&quot;,&quot;name&quot;:&quot;/docs/architect/decision-guides/guide/determining-agentic-vs-traditional-workflow-automation.html&quot;,&quot;children&quot;:[],&quot;link&quot;:{&quot;href&quot;:&quot;/docs/architect/decision-guides/guide/determining-agentic-vs-traditional-workflow-automation.html&quot;}},{&quot;label&quot;:&quot;Event-Driven Architecture&quot;,&quot;name&quot;:&quot;/docs/architect/decision-guides/guide/event-driven.html&quot;,&quot;children&quot;:[],&quot;link&quot;:{&quot;href&quot;:&quot;/docs/architect/decision-guides/guide/event-driven.html&quot;}},{&quot;label&quot;:&quot;Record-Triggered Automation&quot;,&quot;name&quot;:&quot;/docs/architect/decision-guides/guide/record-triggered.html&quot;,&quot;children&quot;:[],&quot;link&quot;:{&quot;href&quot;:&quot;/docs/architect/decision-guides/guide/record-triggered.html&quot;}}],&quot;link&quot;:{&quot;href&quot;:&quot;/docs/architect/decision-guides/guide/get-started-platform-decision-guides.html&quot;}},{&quot;label&quot;:&quot;Data 360 Decision Guides&quot;,&quot;name&quot;:&quot;/docs/architect/decision-guides/guide/get-started-data-360-decision-guides.html&quot;,&quot;children&quot;:[{&quot;label&quot;:&quot;Data 360 Provisioning&quot;,&quot;name&quot;:&quot;/docs/architect/decision-guides/guide/data-360-provisioning.html&quot;,&quot;children&quot;:[],&quot;link&quot;:{&quot;href&quot;:&quot;/docs/architect/decision-guides/guide/data-360-provisioning.html&quot;}},{&quot;label&quot;:&quot;Data 360 Interoperability&quot;,&quot;name&quot;:&quot;/docs/architect/decision-guides/guide/data-360-interoperability.html&quot;,&quot;children&quot;:[],&quot;link&quot;:{&quot;href&quot;:&quot;/docs/architect/decision-guides/guide/data-360-interoperability.html&quot;}}],&quot;link&quot;:{&quot;href&quot;:&quot;/docs/architect/decision-guides/guide/get-started-data-360-decision-guides.html&quot;}},{&quot;label&quot;:&quot;Integration Decision Guides&quot;,&quot;name&quot;:&quot;/docs/architect/decision-guides/guide/get-started-integration-decision-guides.html&quot;,&quot;children&quot;:[{&quot;label&quot;:&quot;Data Integration&quot;,&quot;name&quot;:&quot;/docs/architect/decision-guides/guide/data-integration.html&quot;,&quot;children&quot;:[],&quot;link&quot;:{&quot;href&quot;:&quot;/docs/architect/decision-guides/guide/data-integration.html&quot;}}],&quot;link&quot;:{&quot;href&quot;:&quot;/docs/architect/decision-guides/guide/get-started-integration-decision-guides.html&quot;}}]"
+        sidebar-value="/docs/architect/decision-guides/guide/data-integration.html"
+        toc-title="Contents"
+        toc-options='[
+            
+            ]'
+        enable-slot-change="true"
+        
+            languages='[{"id":"en-us","label":"English","link":{"href":"/docs/architect/decision-guides/guide/data-integration.html"}},{"id":"ja-jp","label":"日本語","link":{"href":"/docs/architect/ja-jp/decision-guides/guide/data-integration.html"}},{"id":"zh-cn","label":"中文","link":{"href":"/docs/architect/zh-cn/decision-guides/guide/data-integration.html"}},{"id":"zh-tw","label":"繁體中文","link":{"href":"/docs/architect/zh-tw/decision-guides/guide/data-integration.html"}},{"id":"fr-fr","label":"Français","link":{"href":"/docs/architect/fr-fr/decision-guides/guide/data-integration.html"}},{"id":"de-de","label":"Deutsch","link":{"href":"/docs/architect/de-de/decision-guides/guide/data-integration.html"}},{"id":"it-it","label":"Italiano","link":{"href":"/docs/architect/it-it/decision-guides/guide/data-integration.html"}},{"id":"ko-kr","label":"한국어","link":{"href":"/docs/architect/ko-kr/decision-guides/guide/data-integration.html"}},{"id":"pt-br","label":"Português","link":{"href":"/docs/architect/pt-br/decision-guides/guide/data-integration.html"}},{"id":"es-mx","label":"Español (México)","link":{"href":"/docs/architect/es-mx/decision-guides/guide/data-integration.html"}},{"id":"da-dk","label":"Dansk","link":{"href":"/docs/architect/da-dk/decision-guides/guide/data-integration.html"}},{"id":"es-es","label":"Español","link":{"href":"/docs/architect/es-es/decision-guides/guide/data-integration.html"}},{"id":"fi-fi","label":"Suomi","link":{"href":"/docs/architect/fi-fi/decision-guides/guide/data-integration.html"}},{"id":"nb-no","label":"Norsk","link":{"href":"/docs/architect/nb-no/decision-guides/guide/data-integration.html"}},{"id":"nl-nl","label":"Nederlands","link":{"href":"/docs/architect/nl-nl/decision-guides/guide/data-integration.html"}},{"id":"sv-se","label":"Svenska","link":{"href":"/docs/architect/sv-se/decision-guides/guide/data-integration.html"}},{"id":"ru-ru","label":"Русский","link":{"href":"/docs/architect/ru-ru/decision-guides/guide/data-integration.html"}}]'
+            language="en-us"
+        
+        
+    >
+        <h1 id="data-integration-with-salesforce">Data Integration with Salesforce</h1>
+<p>There are a multitude of ways to access, synchronize, and share data between Salesforce and external systems. But not every tool is right for your particular project. This guide walks through the landscape of data integration tools available from Salesforce. It also offers recommendations for the tools (or combinations of tools) that are most appropriate given a particular use case, as well as guidance on tools to avoid for specific scenarios.</p>
+<doc-heading header="Guide Overview" hash="guide-overview" aria-level="2"></doc-heading>
+<p>This decision guide focuses on data-level integrations involving Salesforce. Specifically, it covers the following data integration use cases:</p>
+<ul>
+<li>Salesforce to external systems</li>
+<li>External systems to Salesforce</li>
+<li>Salesforce organization to Salesforce organization</li>
+</ul>
+<p>These are only a subset of the integration challenges that Salesforce Architects face, so we plan on adding more decision guides focused on event-driven integration, building effective customer- or employee-facing workflows using process integration, and so on. Finally, it’s important to note that many of the tools and approaches described here can be used to solve integration challenges across the wider enterprise, but such uses are beyond the scope of this guide.</p>
+<doc-heading header="Takeaways" hash="takeaways" aria-level="2"></doc-heading>
+<ul>
+<li><strong>Avoid unnecessary data replication.</strong> Unless the data absolutely needs to reside in Salesforce, consider data virtualization with Salesforce Connect instead. More data in your organization ultimately leads to larger data volumes, which can adversely affect <a href="/docs/architect/well-architected/guide/reliable#performance" class="internal-link-guide">performance</a> and add technical debt. If your data already resides in Salesforce and you need it in an external system, avoid copying it to an external system unless absolutely necessary. Instead, have the external system access the data via the Salesforce APIs.</li>
+<li><strong>Use MuleSoft or other Enterprise Service Bus (ESB) or Extract-Transform-Load (ETL) solutions, if available and part of your existing landscape.</strong> Because these tools are built to help support data migration and transformation, they often have powerful capabilities that enable you to reuse integrations across the enterprise, maintain stronger governance, and centralize management of integrations. In this guide, wherever MuleSoft Anypoint is recommended, consider whether your existing ESB/ETL solution will suffice.</li>
+<li><strong>Harmonize data from different sources with Data 360 and Data Cloud One.</strong> Through the Customer 360 Data Model, identity resolution, data federation, and other features, Data 360 consolidates data from Salesforce and other external systems into a unified view of your customer. And with <a href="/docs/architect/fundamentals/guide/data360_integration_patterns_and_practices.html#unified-multi-org-data-platform-with-data-cloud-one" class="internal-link-guide">Data Cloud One</a>, users in other Salesforce orgs can safely access data shared virtually from Data 360 through data spaces.</li>
+<li>Move data between orgs using <strong>Data 360 actions and activations.</strong> After data is ingested from different orgs into Data 360, data <a href="/docs/architect/fundamentals/guide/data360_integration_patterns_and_practices.html#data-activation-patterns--data-outbound" class="internal-link-guide">actions and activations</a> can sync the data to another org. This approach can be very useful for integrations with Marketing Cloud orgs.</li>
+<li>Extract and move data using <strong>MuleSoft Anypoint.</strong> MuleSoft Anypoint can be used to extract data from Data 360 using Connect API and Data Graph API and move it to another Salesforce org. Without Data 360, MuleSoft Anypoint can also be used when data needs to be moved between orgs without being replicated in Data 360.</li>
+<li><strong>Use caution if you choose to build with Outbound Messaging.</strong> Salesforce will continue supporting Outbound Messaging within current functional capacities, but does not plan on making further investments in this technology.</li>
+<li><strong>Integration user license with "API Only" profile is always recommended for all integrations.</strong> Salesforce also recommends using External Client Applications (in favor of connected apps or SOAP login) as the properly permissioned AuthN and AuthZ patterns for all integrations.</li>
+</ul>
+<doc-heading header="Common Considerations for Choosing Data Integration Tools" hash="common-considerations-for-choosing-data-integration-tools" aria-level="2"></doc-heading>
+<p>Before diving into the data integration tools available, it’s important to keep a few common considerations in mind when choosing a tool. As is typical with architecture, there is no prescriptive answer to every business challenge. If you’ve uttered the words “it depends” when making integration choices, then you’re in the right place.</p>
+<table>
+    <thead>
+        <tr>
+            <th>Area to Consider</th>
+            <th>Common Questions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Existing Tools and Landscape</td>
+            <td>Is there an existing ESB or ETL solution in place? Does the data involved have regulatory or compliance requirements? Where are the systems you're trying to integrate located (in the cloud or on-premise)?</td>
+        </tr>
+        <tr>
+            <td>Data Flow (Timing, Expected User Experience, Directionality)</td>
+            <td>Does the data need to move synchronously, asynchronously or can it be batched/scheduled? Is data replication required? What system should be the source of truth? What is the data source? What is the target destination? Is user interaction required? Does the user need to see the result of the integration? What are the needs around exception handling (retry, notify, fail)? How tightly-coupled should systems be?</td>
+        </tr>
+        <tr>
+            <td>Implementation</td>
+            <td>What is the level of effort for non-Salesforce systems? What teams are responsible for delivering integrations? What tools do they prefer to use?</td>
+        </tr>
+        <tr>
+            <td><a href="/docs/architect/well-architected/guide/intentional#maintainability">Maintainability</a></td>
+            <td>What teams will be expected to maintain the integration? What skills do they currently have? What skills will they need in the future? What is the total cost of ownership over time? How important is the ability to test, debug, troubleshoot with low or pro code tools?</td>
+        </tr>
+        <tr>
+            <td><a href="/docs/architect/well-architected/guide/reliable#data-volume">Data Volume</a></td>
+            <td>How much data is involved in the integration? Will you be working with <a href="https://trailhead.salesforce.com/content/learn/modules/large-data-volumes">Large Data Volumes</a> (LDV)? How frequently will changes happen in bulk? What sort of impact will singleton updates have? How often will they occur?</td>
+        </tr>
+        <tr>
+            <td>Limits</td>
+            <td>Will the data need to undergo complex transformation? Does the data need to be combined from several source systems? How often will an integration take place on a per user basis? How many users total? Have you planned ahead for bulk data loads (example: initial data load for a new instance)?</td>
+        </tr>
+    </tbody>
+</table>
+<doc-heading header="Product Comparison" hash="product-comparison" aria-level="2"></doc-heading>
+<p>Here is a high-level overview of the tools available for data integration and some considerations to start evaluating each option. The following sections include in-depth use cases and details about the capabilities of these tools.</p>
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>From Salesforce to External System</th>
+            <th>From External System to Salesforce</th>
+            <th>Execution</th>
+            <th>Additional License Required</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Apex Actions</strong></td>
+            <td class="guide-table-ok">Available</td>
+            <td class="guide-table-ok">Available</td>
+            <td class="guide-table-ok">Server-Side</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td><strong>Change Data Capture</strong></td>
+            <td class="guide-table-ok">Available</td>
+            <td class="guide-table-no">Not Available</td>
+            <td class="guide-table-ok">Server-Side</td>
+            <td>No*</td>
+        </tr>
+        <tr>
+            <td><strong>Custom Apex (REST and SOAP Web Services)</strong></td>
+            <td class="guide-table-ok">Available</td>
+            <td class="guide-table-ok">Available</td>
+            <td class="guide-table-ok">Server-Side</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td><strong>External Services</strong></td>
+            <td class="guide-table-ok">Available</td>
+            <td class="guide-table-no">Not Available</td>
+            <td class="guide-table-ok">Server-Side</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td><strong>Heroku Connect</strong></td>
+            <td class="guide-table-ok">Available</td>
+            <td class="guide-table-ok">Available</td>
+            <td class="guide-table-ok">Server-Side</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td><strong>Data 360</strong></td>
+            <td class="guide-table-ok">Available</td>
+            <td class="guide-table-ok">Available</td>
+            <td class="guide-table-ok">Server-Side</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td><strong>MuleSoft Anypoint</strong></td>
+            <td class="guide-table-ok">Available</td>
+            <td class="guide-table-ok">Available</td>
+            <td class="guide-table-ok">Server-Side</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td><strong>Native Salesforce APIs</strong></td>
+            <td class="guide-table-no">Not Available</td>
+            <td class="guide-table-ok">Available</td>
+            <td class="guide-table-ok">Server-Side</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td><strong>Omniscript</strong></td>
+            <td class="guide-table-ok">Available</td>
+            <td class="guide-table-ok">Available</td>
+            <td class="guide-table-no">Client-Side***</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td><strong>OmniStudio Integration Procedure</strong></td>
+            <td class="guide-table-ok">Available</td>
+            <td class="guide-table-ok">Available</td>
+            <td class="guide-table-ok">Server-Side</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td><strong>Outbound Messaging</strong></td>
+            <td>Not Ideal</td>
+            <td class="guide-table-no">Not Available</td>
+            <td class="guide-table-ok">Server-Side</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td><strong>Platform Events</strong></td>
+            <td class="guide-table-ok">Available</td>
+            <td class="guide-table-ok">Available</td>
+            <td class="guide-table-ok">Server-Side</td>
+            <td>No**</td>
+        </tr>
+        <tr>
+            <td><strong>Salesforce Connect/External Objects</strong></td>
+            <td class="guide-table-ok">Available</td>
+            <td class="guide-table-ok">Available</td>
+            <td class="guide-table-ok">Server-Side</td>
+            <td>Yes</td>
+        </tr>
+    </tbody>
+</table>
+<p><a href="https://developer.salesforce.com/docs/atlas.en-us.change_data_capture.meta/change_data_capture/cdc_allocations.htm" class="internal-link-guide">*Add-on required for high-volume change data capture event use cases</a></p>
+<p><a href="https://developer.salesforce.com/docs/atlas.en-us.platform_events.meta/platform_events/platform_event_limits.htm" class="internal-link-guide">**Add-on required for high-volume platform event use cases</a></p>
+<p>***Suitable in situations where it's ok for business logic to run within the web browser.</p>
+<p>Column legend:</p>
+<ul>
+<li><strong>Available</strong>: works well for most use cases</li>
+<li><strong>Not Ideal</strong>: possible but consider an alternative tool</li>
+<li><strong>Not Available</strong>: no plans to support in the next twelve months</li>
+</ul>
+<doc-heading header="Other tools for moving data into and out of Salesforce" hash="other-tools-for-moving-data-into-and-out-of-salesforce" aria-level="3"></doc-heading>
+<p>There are other tools that may support some aspects of a data-layer integration, but must not be considered a primary means of solving integration problems. Let’s take a quick look at these tools now.</p>
+<p><strong>Lightning Web Components</strong> are typically used for process integrations, but they can make callouts using JavaScript functionality, so data could be involved in these transactions.</p>
+<p><strong>Salesforce Flow</strong> can be used to orchestrate external callouts with External Services or Apex Actions. Salesforce Flow by itself is not considered a standalone data integration tool.</p>
+<p><strong>Data Import Wizard and Data Loader</strong> can be used to synchronize, import, and migrate data. While Data Loader commands can also be scripted to automate the import and export of data, the <a href="https://developer.salesforce.com/docs/atlas.en-us.dataLoader.meta/dataLoader/command_line_intro.htm" class="internal-link-guide">command-line interface</a> is for Windows only and neither of these tools is a recommended base for a data integration strategy. Instead, use them to complement your data stewardship and maintenance strategy.</p>
+<p><a href="https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_force_data.htm" class="internal-link-guide"><strong>Salesforce CLI</strong></a> data commands can be used to manipulate records in your org. Commands are available to help you import and export data with the Bulk API and SObject Tree Save API, and perform simple CRUD operations on individual records with the REST API. The Salesforce CLI by itself is not considered a standalone data integration tool.</p>
+<p><strong>OmniStudio Data Mapper</strong> can be used as a declarative ETL tool to move data between Salesforce objects and JSON data structures. While a REST interface is automatically created for each Data Mapper interface, providing a declarative way to move data from external systems to Salesforce objects, Data Mapper standalone is not a recommended base for a data integration strategy. Data Mapper actions are available in OmniStudio Integration Procedures.</p>
+<p><a href="http://dataloader.io/" class="external-link-guide" target="_blank"><strong>Dataloader.io</strong></a> is another data loader tool for Salesforce powered by MuleSoft's Anypoint Platform allowing you to quickly and securely import, export and delete unlimited amounts of data for your enterprise. Dataloader.io is not a recommended base for a data integration strategy.</p>
+<doc-heading header="Salesforce to External Systems (Outbound Integration)" hash="salesforce-to-external-systems-outbound-integration" aria-level="2"></doc-heading>
+<p>For outbound integrations from Salesforce, you may consider different types of tools: low-code, pro-code, or a hybrid. The following sections provide guidance for each of these tool types and offer sample solutions.</p>
+<ul>
+<li><a href="#low-code-tools-for-outbound-integrations-from-salesforce" class="internal-link-guide">Low-Code Tools for Outbound Integrations</a></li>
+<li><a href="#hybrid-tools-for-outbound-integrations-from-salesforce" class="internal-link-guide">Hybrid Tools for Outbound Integrations</a></li>
+<li><a href="#pro-code-tools-for-outbound-integrations-from-salesforce" class="internal-link-guide">Pro-Code Tools for Outbound Integrations</a></li>
+</ul>
+<doc-heading header="Low-Code Tools for Outbound Integrations from Salesforce" hash="low-code-tools-for-outbound-integrations-from-salesforce" aria-level="3"></doc-heading>
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Guidance</th>
+            <th>Licensing</th>
+            <th>Timing</th>
+            <th>Volume &#x26; Scale</th>
+            <th></th>
+            <th>Delivery &#x26; Maintenance</th>
+            <th></th>
+            <th></th>
+            <th>Privacy &#x26; Security</th>
+            <th></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th><strong>When to Use</strong></th>
+            <th><strong>Additional License</strong></th>
+            <th><strong>Sync (Request/Reply) or Async (Fire/Forget)</strong></th>
+            <th><strong>Multi-Object Support</strong></th>
+            <th><strong>LDV/Bulk</strong></th>
+            <th><strong>Testing &#x26; Deployment**</strong></th>
+            <th><strong>Debugging</strong></th>
+            <th><strong>Built-In Error Handling/Retry Behavior</strong></th>
+            <th><strong>Can Use with Data Encrypted at Rest</strong></th>
+            <th><strong>Authentication Protocol</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Change Data Capture</strong></td>
+            <td>When you need to publish record-level changes made in Salesforce to an external system and don't need a custom payload.</td>
+            <td>Required</td>
+            <td>Async</td>
+            <td>No</td>
+            <td>No</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>With pro-code tools</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>OAuth</td>
+        </tr>
+        <tr>
+            <td><strong>External Services</strong></td>
+            <td>When you're orchestrating a process using Flow, Apex, Einstein Bots or OmniStudio and the external system APIs are described using OpenAPI specifications.</td>
+            <td>Not Required</td>
+            <td>Sync</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>No</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>With pro-code tools</td>
+            <td>No</td>
+            <td>N/A</td>
+            <td>Named Credentials</td>
+        </tr>
+        <tr>
+            <td><strong>Heroku Connect</strong></td>
+            <td>When you want to extend your data with bidirectional sync to enable mobile and other apps on Heroku, and you want the data to also be replicated to Salesforce.</td>
+            <td>Required</td>
+            <td>Async</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>No</td>
+            <td>With pro code tools</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes, via Shield Connect</td>
+            <td>OAuth</td>
+        </tr>
+        <tr>
+            <td><strong>OmniStudio Integration Procedure</strong></td>
+            <td>When you need to transform data without user interaction and improve performance by processing on the server instead of the browser.</td>
+            <td>Required</td>
+            <td>Both</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>Declarative support</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>Named Credentials</td>
+        </tr>
+        <tr>
+            <td><strong>Salesforce Connect/External Objects</strong></td>
+            <td>When you want data to appear in the Salesforce UI, but want the data to be stored in an external system. Data is not replicated to Salesforce.</td>
+            <td>Required</td>
+            <td>Sync</td>
+            <td>No</td>
+            <td class="guide-table-ok">Yes*</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>With pro-code tools &#x26; a declarative tracer</td>
+            <td>No</td>
+            <td>N/A</td>
+            <td>Named Credentials</td>
+        </tr>
+        <tr>
+            <td colspan="11">*OData adapters older than version 4.01 are subject to callout limits. See <a href="https://help.salesforce.com/s/articleView?id=platform.odata_general_limits.htm&#x26;type=5">OData Callout Rate Limit Considerations</a> for more details. ** Testing and Deployment refers to the ability to build in a lower environment and deploy via the <a href="https://developer.salesforce.com/docs/metadata-coverage/">Metadata API</a>, packages, or change sets to production.</td>
+        </tr>
+    </tbody>
+</table>
+<doc-heading header="Use Case: Outbound Integration Using Low-Code Tools" hash="use-case-outbound-integration-using-low-code-tools" aria-level="3"></doc-heading>
+<blockquote>
+<p>When opportunities are won, an order for the associated products needs to be created in the company’s ERP system or order management system.</p>
+</blockquote>
+<p><strong>Change Data Capture</strong> As Opportunity records are updated, Change Data Capture publishes change events that contain the updates to the objects. The change events are consumed on the customer’s side over a CometD connection (or via a MuleSoft connector) and used to update the customer’s ERP or order management system. Change events can be enriched to always include external record IDs or other data from the object (such as region) that are needed for the integration. Change event streams for multiple objects can be combined into <em>channels</em> for simplified subscription and stream processing (so you can subscribe to and process one stream instead of many).</p>
+<p><strong>External Services</strong> If you have a web service that supports the OpenAPI 2.0 or 3.0 specification, you can expose the operations and services as an External Service within Salesforce. The API operations (for example create order) can be called as an Invocable Action in a flow built with Flow Builder when the stage of the opportunity is changed to "Won".</p>
+<p><strong>Heroku Connect</strong> Heroku Connect is typically used to keep a Heroku Postgres Database and Salesforce in sync. If the customer uses Heroku Postgres as their source-of-truth transactional store, then you can sync the records and the changes from Salesforce to Heroku Postgres using Heroku Connect. From there, you can use Heroku Streaming Connectors to publish those changes to Apache Kafka and send them as events to downstream applications, including the ERP or order management system.</p>
+<p><strong>OmniStudio Integration Procedure</strong> When an order is submitted, the Omniscript orchestrating the process can post the order details to an ERP or MuleSoft connector. The post can be executed either directly by the Omniscript (client-side) or indirectly via an Integration Procedure (server-side). If the ERP system throws a validation error, the Omniscript UI must notify the user, and if necessary, translate and contextualize the error for the user.</p>
+<p><strong>Salesforce Connect/External Objects</strong> You can create a record-triggered flow in Salesforce that inserts a record into the related external object(s) when the stage of the opportunity is changed to "Won". Since this is a <a href="https://help.salesforce.com/articleView?id=000328873&#x26;type=1&#x26;mode=1" class="external-link-guide" target="_blank">mixed transaction</a>, to avoid errors add a pause element for zero seconds between the Opportunity update and the related external object insert(s) so that you close one transaction context before you start a new one.</p>
+<doc-heading header="Hybrid Tools for Outbound Integrations from Salesforce" hash="hybrid-tools-for-outbound-integrations-from-salesforce" aria-level="3"></doc-heading>
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Guidance</th>
+            <th>Licensing</th>
+            <th>Timing</th>
+            <th>Volume &#x26; Scale</th>
+            <th></th>
+            <th>Delivery &#x26; Maintenance</th>
+            <th></th>
+            <th></th>
+            <th>Privacy &#x26; Security</th>
+            <th></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th><strong>When to Use</strong></th>
+            <th><strong>Additional License</strong></th>
+            <th><strong>Sync (Request/Reply) or Async (Fire/Forget)</strong></th>
+            <th><strong>Multi-Object Support</strong></th>
+            <th><strong>LDV/Bulk</strong></th>
+            <th><strong>Testing &#x26; Deployment**</strong></th>
+            <th><strong>Debugging</strong></th>
+            <th><strong>Built-In Error Handling/Retry Behavior</strong></th>
+            <th><strong>Can Use with Data Encrypted at Rest</strong></th>
+            <th><strong>Authentication Protocol</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Apex Actions</strong></td>
+            <td>When you want to automate callouts to another system via Salesforce Flow. A developer can write an Apex class that a flow can invoke, or you can download a prebuilt solution from AppExchange.</td>
+            <td>Not Required</td>
+            <td>Both</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>No</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>With pro-code tools</td>
+            <td>No</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>Multiple</td>
+        </tr>
+        <tr>
+            <td><strong>Event Relays</strong></td>
+            <td>When you need to send platform events and change data capture events to Amazon EventBridge from Salesforce. Event Relays only connect to AWS Eventbridge</td>
+            <td>No</td>
+            <td>Async</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>No</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>HTTP/1.1 with TLS</td>
+        </tr>
+        <tr>
+            <td><strong>Outbound Messaging</strong></td>
+            <td>When you need to send SOAP messages over HTTP(S) to a designated endpoint with guaranteed receipt when triggered by a workflow rule.</td>
+            <td>Not Required</td>
+            <td>Async</td>
+            <td>No</td>
+            <td>No</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>Declarative support</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>Two-way TLS</td>
+        </tr>
+        <tr>
+            <td><strong>Platform Events</strong></td>
+            <td>When you need a custom-defined, structured payload for near real-time changes in Salesforce or an external system.</td>
+            <td>Not Required*</td>
+            <td>Async</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>No</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>With pro-code tools</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>OAuth</td>
+        </tr>
+        <tr>
+            <td><strong>Salesforce Connect/External Objects (with custom Apex adapters)</strong></td>
+            <td>When you want data to appear in the Salesforce UI, but want the data to be stored in an external system that cannot use standard protocols like OData or GraphQL.</td>
+            <td>Required</td>
+            <td>Both</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>With pro-code tools</td>
+            <td>No</td>
+            <td>N/A</td>
+            <td>Multiple</td>
+        </tr>
+         <tr>
+            <td><strong>Data 360</strong></td>
+            <td>When you want harmonized data from different sources in one data store, or you want to replicate your data to other Salesforce orgs or to other external systems.</td>
+            <td>Required</td>
+            <td>Both</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>Multiple</td>
+        </tr>
+    </tbody>
+</table>
+<p><a href="https://developer.salesforce.com/docs/atlas.en-us.platform_events.meta/platform_events/platform_event_limits.htm" class="internal-link-guide">*Add-on</a> required for high-volume use cases.</p>
+<p>**Testing and Deployment refers to the ability to build in a lower environment and deploy via the <a href="https://developer.salesforce.com/docs/metadata-coverage/" class="internal-link-guide">Metadata API</a>, packages, or change sets to production.</p>
+<doc-heading header="Use Case: Outbound Integration Using Hybrid Tools" hash="use-case-outbound-integration-using-hybrid-tools" aria-level="3"></doc-heading>
+<blockquote>
+<p>When opportunities are won, an order for the associated products needs to be created in the company’s ERP or order management system.</p>
+</blockquote>
+<p><strong>Apex Actions</strong> A record-triggered flow based on the opportunity state can be triggered automatically when an opportunity is won. The flow executes an invocable action that uses an external callout to submit the order to the order management system or ERP solution. High-volume submissions and multisite orders are handled by Apex batch and queue mechanisms.</p>
+<p><strong>Outbound Messaging</strong> After <a href="https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_om_outboundmessaging_setting_up.htm" class="internal-link-guide">setting up outbound messaging</a>, you can define a workflow rule triggered by the opportunity update to send a SOAP message over HTTP(S) to a specified endpoint URL hosting the listener. The message will contain the fields specified when the outbound message was created. If the information in the object changes after the notification is queued, but before it is sent, only the updated information will be delivered and messages will stay in the queue until sent successfully, or until they are 24 hours old. After 24 hours, messages are dropped from the queue. If the ERP system requires additional data, you can pass the sessionId in outbound messages so the external system can make a callback request.</p>
+<p><strong>Platform Events</strong> You can define a platform event that includes the custom payload with the data required to create the records in the external system. Because Platform Events are not auto-published upon record change, you must publish the event via Apex, Salesforce Flow, or Process Builder when the stage of the opportunity is changed to "Won". An external service listens to the platform event channel using CometD (or a MuleSoft connector) and creates the appropriate records in the external system.</p>
+<p><strong>Salesforce Connect/External Objects (with custom Apex adapters)</strong> A solution based on Salesforce Connect/External Objects is not perfectly suited for a use case that purely requires data synchronization. However, this solution can apply in cases where users within Salesforce need to see, and potentially interact with data from the external system, and the data cannot be replicated in Salesforce. If the ERP or order management system does not support OData or GraphQL protocols, then the development team can use the <a href="https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_connector_start.htm" class="internal-link-guide">Apex Connector Framework</a> to write Apex classes that handle communication with the external system via a supported protocol.</p>
+<p><strong>Data 360</strong> A solution based on Data 360 is perfectly suited for use cases where we need harmonized data from different sources in one data store. It can be also used when we need to replicate data from one Salesforce org to multiple Salesforce orgs or to other external systems using Data 360 as a data hub. When an opportunity is won and updated in the source org, opportunity data will be synced to Data 360, where it can be replicated in other systems including Salesforce orgs using different mechanisms like actions, activations, and APIs. Similarly, an opportunity can be referred without replicating the data in other Salesforce orgs using Data Cloud One. However, Data Cloud One does not support non-Salesforce platforms.</p>
+<doc-heading header="Pro-Code Tools for Outbound Integrations from Salesforce" hash="pro-code-tools-for-outbound-integrations-from-salesforce" aria-level="3"></doc-heading>
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Guidance</th>
+            <th>Licensing</th>
+            <th>Timing</th>
+            <th>Volume &#x26; Scale</th>
+            <th></th>
+            <th>Delivery &#x26; Maintenance</th>
+            <th></th>
+            <th></th>
+            <th>Privacy &#x26; Security</th>
+            <th></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th><strong>When to Use</strong></th>
+            <th><strong>Additional License</strong></th>
+            <th><strong>Sync (Request/Reply) or Async (Fire/Forget)</strong></th>
+            <th><strong>Multi-Object Support</strong></th>
+            <th><strong>LDV/Bulk</strong></th>
+            <th><strong>Testing &#x26; Deployment**</strong></th>
+            <th><strong>Debugging</strong></th>
+            <th><strong>Built-In Error Handling/Retry Behavior</strong></th>
+            <th><strong>Can Use with Data Encrypted at Rest</strong></th>
+            <th><strong>Authentication Protocol</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Custom Apex</strong></td>
+            <td>When you need more functionality than is available in low-code tools.</td>
+            <td>Not Required</td>
+            <td>Both</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>With pro-code tools</td>
+            <td>No</td>
+            <td class="guide-table-ok">Yes*</td>
+            <td>Multiple</td>
+        </tr>
+        <tr>
+            <td><strong>External Services</strong></td>
+            <td>Integrating from code with external system APIs are described using OpenAPI specifications.</td>
+            <td>Not Required</td>
+            <td>Sync</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>No</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>With pro-code tools</td>
+            <td>No</td>
+            <td>N/A</td>
+            <td>Multiple</td>
+        </tr>
+        <tr>
+            <td><strong>MuleSoft Anypoint</strong></td>
+            <td>When you need a single enterprise-grade, unified solution to build, orchestrate, and manage your integrations; when you need to replace a legacy point-to-point architecture; or when you need API management support.</td>
+            <td>Required</td>
+            <td>Both</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>With pro-code tools</td>
+            <td>No</td>
+            <td class="guide-table-ok">Yes*</td>
+            <td>Multiple</td>
+        </tr>
+    </tbody>
+</table>
+<p>*Enabling Shield Platform Encryption changes certain behaviors, see <a href="https://help.salesforce.com/articleView?id=sf.security_pe_considerations_general.htm&#x26;type=5" class="external-link-guide" target="_blank">General Shield Platform Encryption Considerations</a> for more details.</p>
+<p>**Testing and Deployment refers to the ability to build in a lower environment and deploy via the <a href="https://developer.salesforce.com/docs/metadata-coverage/" class="internal-link-guide">Metadata API</a>, packages, or change sets to production.</p>
+<doc-heading header="Use Case: Outbound Integration Using Pro-Code Tools" hash="use-case-outbound-integration-using-pro-code-tools" aria-level="3"></doc-heading>
+<blockquote>
+<p>When opportunities are won, an order for the associated products needs to be created in the company’s ERP or order management system.</p>
+</blockquote>
+<p><strong>Custom Apex</strong> You can create an Apex trigger and trigger handler(s) on the Opportunity that makes a callout to the ERP or order management system when the stage of the opportunity is changed to "Won". Note that if you make callouts from a trigger or after performing a DML operation, you must use a method annotated as future or queueable. A callout in a trigger holds the database connection open for the lifetime of the callout. All Apex code is bound by <a href="https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_overview.htm" class="internal-link-guide">Apex Governor and API Limits</a>, which are revised on an ongoing basis.</p>
+<p><strong>External Services</strong> If the company’s external ERP or order management system are defined via an OpenAPI specification the callouts to those services that are performed in the future method or queueable job could be simplified. The registered external services can be called directly from Apex without needing to write boilerplate code. In the example, the callout to create the order can be handled by the external service.</p>
+<p><strong>MuleSoft Anypoint</strong> MuleSoft Anypoint provides enterprise-grade API management. MuleSoft Anypoint can create APIs to enable read (and/or write) access to data for Salesforce and many other enterprise systems. There are <a href="https://www.mulesoft.com/platform/cloud-connectors" class="external-link-guide" target="_blank">many prebuilt connectors available</a> to simplify implementation, and companies can create and publish their own connectors as well. These APIs can be deployed in Anypoint with flexible security policies, supporting centralized management and governance. There are no restrictions on volume of transactions, as long as the API has been properly sized for its peak utilization (as measured in vCores).</p>
+<doc-heading header="External Systems Data to Salesforce (Inbound Integration)" hash="external-systems-data-to-salesforce-inbound-integration" aria-level="2"></doc-heading>
+<p>For inbound integrations to Salesforce, you may consider different types of tools: low-code, pro-code, or a hybrid. The following sections provide guidance for each of these tool types and offer sample solutions.</p>
+<ul>
+<li><a href="#low-code-tools-for-inbound-integrations-to-salesforce" class="internal-link-guide">Low-Code Tools for Inbound Integrations</a></li>
+<li><a href="#hybrid-tools-for-inbound-integrations-to-salesforce" class="internal-link-guide">Hybrid Tools for Inbound Integrations</a></li>
+<li><a href="#pro-code-tools-for-inbound-integrations-to-salesforce" class="internal-link-guide">Pro-Code Tools for Inbound Integrations</a></li>
+</ul>
+<doc-heading header="Low-Code Tools for Inbound Integrations to Salesforce" hash="low-code-tools-for-inbound-integrations-to-salesforce" aria-level="3"></doc-heading>
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Guidance</th>
+            <th>Licensing</th>
+            <th>Timing</th>
+            <th>Volume &#x26; Scale</th>
+            <th></th>
+            <th>Delivery &#x26; Maintenance</th>
+            <th></th>
+            <th></th>
+            <th>Privacy &#x26; Security</th>
+            <th></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th>When to Use</th>
+            <th>Additional License</th>
+            <th>Sync (Request/Reply) or Async (Fire/Forget)</th>
+            <th>Multi-Object Support</th>
+            <th>LDV/Bulk</th>
+            <th>Testing &#x26; Deployment*</th>
+            <th>Debugging</th>
+            <th>Built-In Error Handling/Retry Behavior</th>
+            <th>Can Use with Data Encrypted at Rest</th>
+            <th>Authentication Protocol</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Heroku Connect</strong></td>
+            <td>When you want to extend your data with bidirectional sync to enable mobile and other apps on Heroku, and you want the data to also be replicated to Salesforce.</td>
+            <td>Required</td>
+            <td>Async</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>No</td>
+            <td>With pro-code tools</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes, via Shield Connect</td>
+            <td>OAuth</td>
+        </tr>
+        <tr>
+            <td><strong>OmniStudio Integration Procedure</strong></td>
+            <td>When you need to import and transform data from third-party sources without user interaction.</td>
+            <td>Required</td>
+            <td>Both</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>Declarative support</td>
+            <td>No</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>Named Credentials</td>
+        </tr>
+        <tr>
+            <td><strong>Salesforce Connect/External Objects</strong></td>
+            <td>When you want data to appear in the Salesforce UI, but want the data to be stored in an external system that can use standard protocols like OData or GraphQL.</td>
+            <td>Required</td>
+            <td>Sync</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>With pro-code tools</td>
+            <td>No</td>
+            <td>N/A</td>
+            <td>Multiple</td>
+        </tr>
+    </tbody>
+</table>
+<p>*Testing and Deployment refers to the ability to build in a lower environment and deploy via the <a href="https://developer.salesforce.com/docs/metadata-coverage/" class="internal-link-guide">Metadata API</a>, packages, or change sets to production.</p>
+<doc-heading header="Use Case: Inbound Integration Using Low-Code Tools" hash="use-case-inbound-integration-using-low-code-tools" aria-level="3"></doc-heading>
+<blockquote>
+<p>A contact is updated in the organization’s ERP system. This contact information needs to be updated in Salesforce.</p>
+</blockquote>
+<p><strong>Heroku Connect</strong> Heroku Connect is typically used to keep a Heroku Postgres Database and Salesforce in sync. Unless the ERP system uses Heroku Postgres as its transaction store, this use case is not possible. If it does use Heroku Postgres, then changes made in the Postgres tables can be synced to objects in Salesforce using Heroku Connect.</p>
+<p><strong>OmniStudio Integration Procedure</strong> After the ERP system updates the contact record, an OmniStudio Integration Procedure with a Data Mapper Load Action and a Response Action can be called via the REST API generated by Data Mapper. First, a Data Mapper Load action sends a JSON or XML payload, which is used to upsert the contact records based on an External ID field or through an <a href="https://trailhead.salesforce.com/content/learn/modules/omnistudio-data-tools-and-internal-data/build-an-integration-procedure-with-conditional-dataraptor-loads?trail_id=build-guided-experiences-with-omnistudio" class="external-link-guide" target="_blank">Upsert Key</a>. If a simple response in JSON is all that is expected, a Response Action can send back any relevant information from the previous actions to indicate success or failure. If the ERP system expects a specific response then a Data Mapper Transform or Extract Action can be used to generate a JSON or XML response with additional features to declaratively include data that was generated in triggers by the contact record update. The main challenge with this scenario is concurrency: Multiple calls to update the same contact record concurrently will cause issues as the API exists directly in Salesforce.</p>
+<p><strong>Salesforce Connect / External Objects</strong> Salesforce Connect and external objects are not recommended for this use case, because the scenario specifically requires data replication in Salesforce. If you have a pre-existing Salesforce Connect integration built to the ERP, you can configure the OData 4.0 connector to support external change data capture if the ERP can support change data capture. Further, you must configure in Salesforce to subscribe to the change stream from the ERP, using Pub/Sub API.</p>
+<doc-heading header="Hybrid Tools for Inbound Integrations to Salesforce" hash="hybrid-tools-for-inbound-integrations-to-salesforce" aria-level="3"></doc-heading>
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Guidance</th>
+            <th>Licensing</th>
+            <th>Timing</th>
+            <th>Volume &#x26; Scale</th>
+            <th></th>
+            <th>Delivery &#x26; Maintenance</th>
+            <th></th>
+            <th></th>
+            <th>Privacy &#x26; Security</th>
+            <th></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th>When to Use</th>
+            <th>Additional License</th>
+            <th>Sync (Request/Reply) or Async (Fire/Forget)</th>
+            <th>Multi-Object Support</th>
+            <th>LDV/Bulk</th>
+            <th>Testing &#x26; Deployment**</th>
+            <th>Debugging</th>
+            <th>Built-In Error Handling/Retry Behavior</th>
+            <th>Can Use with Data Encrypted at Rest</th>
+            <th>Authentication Protocol</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Platform Events</strong></td>
+            <td>When you need a custom-defined, structured payload for near real-time changes in Salesforce or an external system.</td>
+            <td>Not Required*</td>
+            <td>Async</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>No</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>With pro-code tools</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>OAuth</td>
+        </tr>
+        <tr>
+            <td><strong>Salesforce Connect/External Objects (with custom Apex adapters)</strong></td>
+            <td>When you need data to appear in the Salesforce UI, but want the data to be stored in an external system that cannot use OData 2.0/4.0 protocols.</td>
+            <td>Required</td>
+            <td>Both</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>With pro-code tools</td>
+            <td>No</td>
+            <td>N/A</td>
+            <td>Multiple</td>
+        </tr>
+        <tr>
+            <td><strong>Data 360</strong></td>
+            <td>When you want harmonized data from different sources in one data store, or you want to replicate your data from other Salesforce orgs or to other external systems. Data 360 also supports virtualization for some platforms.</td>
+            <td>Required</td>
+            <td>Both</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>No</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>Multiple</td>
+        </tr>
+    </tbody>
+</table>
+<p>*<a href="https://developer.salesforce.com/docs/atlas.en-us.platform_events.meta/platform_events/platform_event_limits.htm" class="internal-link-guide">Add-on</a> required for high-volume use cases.</p>
+<p>**Testing and Deployment refers to the ability to build in a lower environment and deploy via the <a href="https://developer.salesforce.com/docs/metadata-coverage/" class="internal-link-guide">Metadata API</a>, packages, or change sets to production.</p>
+<doc-heading header="Use Case: Inbound Integration Using Hybrid Tools" hash="use-case-inbound-integration-using-hybrid-tools" aria-level="3"></doc-heading>
+<blockquote>
+<p>A contact is updated in the organization’s ERP system. This contact information needs to be updated in Salesforce.</p>
+</blockquote>
+<p><strong>Platform Events</strong> Custom code in an external system publishes a Platform Event when the contact record is updated in the ERP. A trigger, Process or Flow in Salesforce can subscribe to the platform event, and update the corresponding Salesforce object(s) when an event is processed. The Platform Event may function simply as a signal that a change happened in the customer’s ERP system without containing any data, or it may contain the actual data needed to update the Salesforce object.</p>
+<p><strong>Salesforce Connect/External Objects (with custom Apex adapters)</strong> This solution isn't applicable in a use case that requires data replication. This solution is applicable if you need users in Salesforce to see information from an external system that must not or cannot be replicated in Salesforce, and the external system cannot support standard protocols like OData or GraphQL. See <a href="#use-case-outbound-integration-using-hybrid-tools" class="internal-link-guide">Use Case: Outbound Integration Using Hybrid Tools</a> for an example use case for an Apex custom adapter.</p>
+<p><strong>Data 360</strong> When a contact is updated in external systems like ERP, the contact updates can be synced to Data 360 either using available out of the box connectors or using APIs and pro-code tools like MuleSoft. Contact can also be referenced in Data 360 using zero copy mechanism (available with some platforms). Once data is available in Data 360, different out of the box integration mechanisms can be used for syncing the data to other Salesforce orgs. Data can be accessed by reference using Data Cloud One. Data can be replicated too using activations and other APIs using out of the box connectors or with the help of pro-code tools like MuleSoft Anypoint platform.</p>
+<doc-heading header="Pro-Code Tools for Inbound Integrations to Salesforce" hash="pro-code-tools-for-inbound-integrations-to-salesforce" aria-level="3"></doc-heading>
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Guidance</th>
+            <th>Licensing</th>
+            <th>Timing</th>
+            <th>Volume &#x26; Scale</th>
+            <th></th>
+            <th>Delivery &#x26; Maintenance</th>
+            <th></th>
+            <th></th>
+            <th>Privacy &#x26; Security</th>
+            <th></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th>When to Use</th>
+            <th>Additional License</th>
+            <th>Sync (Request/Reply) or Async (Fire/Forget)</th>
+            <th>Multi-Object Support</th>
+            <th>LDV/Bulk</th>
+            <th>Testing &#x26; Deployment****</th>
+            <th>Debugging</th>
+            <th>Built-In Error Handling/Retry Behavior</th>
+            <th>Can Use with Data Encrypted at Rest</th>
+            <th>Authentication Protocol</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Custom Apex REST &#x26; SOAP Web Services</strong></td>
+            <td>When you need more functionality than provided by the native API endpoints such as cross object processing or other complex logic.</td>
+            <td>Not Required</td>
+            <td>Both</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>With pro-code tools</td>
+            <td>No</td>
+            <td class="guide-table-ok">Yes***</td>
+            <td>Multiple</td>
+        </tr>
+        <tr>
+            <td><strong>MuleSoft Anypoint</strong></td>
+            <td>When you need a single enterprise-grade, unified solution to build, orchestrate, and manage your integrations; when you need to replace a legacy point-to-point architecture; or when you need API management support.</td>
+            <td>Required</td>
+            <td>Both</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>With pro-code tools</td>
+            <td>No</td>
+            <td class="guide-table-ok">Yes***</td>
+            <td>Multiple</td>
+        </tr>
+        <tr>
+            <td><strong>Native Salesforce APIs</strong></td>
+            <td>When you need more control or have a pro-code skill set to build integrations via REST API, SOAP API, Bulk API, or GraphQL APIs, or gRPC.</td>
+            <td>Not Required*</td>
+            <td>Both</td>
+            <td class="guide-table-ok">Yes*****</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>With pro-code tools</td>
+            <td class="guide-table-ok">Yes**</td>
+            <td class="guide-table-ok">Yes***</td>
+            <td>Multiple</td>
+        </tr>
+    </tbody>
+</table>
+<p>*<a href="https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm" class="internal-link-guide">API Request Limits and Allocations</a> apply.</p>
+<p>**Bulk APIs have aspects of retry behavior and a number of APIs offer <em>rollback</em> protection via allOrNone setting (for example, see <a href="https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_allornone.htm" class="internal-link-guide">allOrNone Parameters in Composite and Collections Requests</a>)</p>
+<p>***Enabling Shield Platform Encryption changes certain behaviors, see <a href="https://help.salesforce.com/articleView?id=sf.security_pe_considerations_general.htm&#x26;type=5" class="external-link-guide" target="_blank">General Shield Platform Encryption Considerations</a> for more details.</p>
+<p>****Testing and Deployment refers to the ability to build in a lower environment and deploy via the <a href="https://developer.salesforce.com/docs/metadata-coverage/" class="internal-link-guide">Metadata API</a>, packages, or change sets to production.</p>
+<p>*****Composite APIs have multi-object support.</p>
+<doc-heading header="Use Case: Inbound Integration Using Pro-Code Tools" hash="use-case-inbound-integration-using-pro-code-tools" aria-level="3"></doc-heading>
+<blockquote>
+<p>A contact is updated in the organization’s ERP system. This contact information needs to be updated in Salesforce.</p>
+</blockquote>
+<p><strong>Custom Apex REST and SOAP Web Services</strong> You can create a web service using Apex code that could perform CRUD (create, read, update, delete) operations on the Contact object. This service will be invoked via SOAP or REST from the external system (the ERP).</p>
+<p><strong>MuleSoft Anypoint</strong> The intent of MuleSoft Anypoint is to provide enterprise grade API management. MuleSoft Anypoint offers a <a href="https://www.mulesoft.com/platform/cloud-connectors" class="external-link-guide" target="_blank">large set of prebuilt connectors</a> that you can use to integrate with many ERP systems including SAP, Oracle EBS, Oracle ERP, and NetSuite. You can create a flow to listen for events in these ERP systems (in this case, when a new contact is created). When the flow is kicked off it uses the Salesforce connector to create a new Contact record (or update one if the contact already exists). Additionally, it is possible to integrate with other systems, if the replication transaction involves syndicating the contact into other systems. If needed, you can use the mapping and transformation language (DataWeave) to perform complex logic and calculations as information flows across multiple disparate systems. Authentication against these systems can be done through many different authentication mechanisms such as Basic Authentication and OAuth, among others. There are no restrictions on volume of transactions as long as the flow has been properly sized for its peak utilization (measured in vCores).</p>
+<p><strong>Native Salesforce APIs</strong> As (or immediately after) the update transaction in the ERP system completes, you can perform an upsert operation on the Contact object via the SOAP API or perform a <a href="https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/dome_update_fields.htm" class="internal-link-guide">PATCH</a> against the Contact sObjects REST API in the Salesforce organization.</p>
+<doc-heading header="Salesforce to Salesforce Integrations" hash="salesforce-to-salesforce-integrations" aria-level="2"></doc-heading>
+<p>The Salesforce to Salesforce product has reached its end of life. Salesforce to Salesforce made it easy for partners working together to sell to and support joint customers, but Salesforce will be investing in bringing more innovation to other tools. Moving forward, the following approaches are recommended for sharing data between Salesforce organizations.</p>
+<doc-heading header="Tools for Data Integration Across Salesforce Organizations" hash="tools-for-data-integration-across-salesforce-organizations" aria-level="3"></doc-heading>
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Guidance</th>
+            <th>Cost</th>
+            <th>Timing</th>
+            <th>Volume &#x26; Scale</th>
+            <th></th>
+            <th></th>
+            <th>Delivery &#x26; Maintenance</th>
+            <th></th>
+            <th>Privacy &#x26; Security</th>
+            <th></th>
+            <th>Tools to Implement</th>
+        </tr>
+        <tr>
+            <th></th>
+            <th><strong>When to Use</strong></th>
+            <th><strong>Additional License</strong></th>
+            <th><strong>Sync (Request/Reply) or Async (Fire/Forget)</strong></th>
+            <th><strong>Multi-Object Support</strong></th>
+            <th><strong>LDV/Bulk</strong></th>
+            <th><strong>Testing &#x26; Deployment*</strong></th>
+            <th><strong>Debugging</strong></th>
+            <th><strong>Built-In Error Handling/Retry Behavior</strong></th>
+            <th><strong>Can Use with Data Encrypted at Rest</strong></th>
+            <th><strong>Authentication Protocol</strong></th>
+            <th><strong>Low Code → Pro Code</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Heroku Connect</strong></td>
+            <td>When you want to extend your data with bidirectional sync across Salesforce orgs and also enable access to the data from mobile and other apps running on Heroku</td>
+            <td>Required</td>
+            <td>Async</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>No</td>
+            <td>With pro-code tools</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes, via Shield Connect</td>
+            <td>OAuth</td>
+            <td>Low Code</td>
+        </tr>
+        <tr>
+            <td><strong>MuleSoft Anypoint</strong></td>
+            <td>When you need a single enterprise-grade, unified solution to build, orchestrate, and manage your integrations; when you need to replace a legacy point-to-point architecture; or when you need API management support</td>
+            <td>Required</td>
+            <td>Both</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>With pro-code tools</td>
+            <td>No</td>
+            <td class="guide-table-ok">Yes**</td>
+            <td>Multiple</td>
+            <td>Pro Code</td>
+        </tr>
+        <tr>
+            <td><strong>Native Salesforce APIs</strong></td>
+            <td>When Salesforce or Heroku Connect are not an option or you need more complex processing</td>
+            <td>Not Required</td>
+            <td>Both</td>
+            <td>No</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>With pro-code tools</td>
+            <td>No</td>
+            <td class="guide-table-ok">Yes**</td>
+            <td>Multiple</td>
+            <td>Pro Code</td>
+        </tr>
+        <tr>
+            <td><strong>Change Data Capture</strong></td>
+            <td>When you need to publish record-level changes made in Salesforce to an external system and don't need a custom payload.</td>
+            <td>Required</td>
+            <td>Async</td>
+            <td>No</td>
+            <td>No</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>With pro-code tools</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>OAuth</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><strong>Salesforce Connect with Cross-Org Adapter</strong></td>
+            <td>When you want users in one org to view or edit records in a different org without data replication</td>
+            <td>Required</td>
+            <td>Async</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>With pro-code tools</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>Multiple</td>
+            <td>Low Code</td>
+        </tr>
+        <tr>
+            <td><strong>Data 360</strong></td>
+            <td>When you want users in one org to view or edit records in a different org with data replicated in Data 360.</td>
+            <td>Required</td>
+            <td>Both</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>With pro-code tools</td>
+            <td class="guide-table-ok">Yes</td>
+            <td class="guide-table-ok">Yes</td>
+            <td>Multiple</td>
+            <td>Hybrid</td>
+        </tr>
+    </tbody>
+</table>
+<p>*Testing and Deployment refers to the ability to build in a lower environment and deploy via the <a href="https://developer.salesforce.com/docs/metadata-coverage/" class="internal-link-guide">Metadata API</a>, packages, or change sets to production</p>
+<p>**Enabling Shield Platform Encryption changes certain behaviors, see <a href="https://help.salesforce.com/articleView?id=sf.security_pe_considerations_general.htm&#x26;type=5" class="external-link-guide" target="_blank">General Shield Platform Encryption Considerations</a> for more details.</p>
+<p><em>Platform events are not optimal for integrating data from one Salesforce organization to another, because they can’t “listen” between organizations for the same event. Custom Apex is also not a recommended approach for this type of integration.</em></p>
+<doc-heading header="Use Case: Connecting Multiple Salesforce Orgs" hash="use-case-connecting-multiple-salesforce-orgs" aria-level="3"></doc-heading>
+<blockquote>
+<p>A large enterprise operates across multiple business units (BUs). Each BU has its own Salesforce organization. A single customer deals with multiple business units of the enterprise and thus has account and opportunity data in multiple organizations. The enterprise needs to access an aggregated view of all the Account and Opportunity data across all BUs in a single org.</p>
+</blockquote>
+<p><em>Note: All solutions below design for the least amount of data replication, in accordance with <a href="#takeaways" class="internal-link-guide">Takeaway #1</a>.</em></p>
+<p><strong>Data 360</strong> Account and opportunity data from different Salesforce orgs can be ingested into Data 360 using out of the box Salesforce connectors. They can be aggregated and harmonized as well (if required). Once data is aggregated in Data 360, it can be accessed in other Salesforce orgs using Data Cloud One without data replication.</p>
+<p><strong>Heroku Connect</strong> For each BU's individual organization, you can use Heroku Connect to sync changes from Salesforce into a single Heroku Postgres database. In this scenario, bi-directional syncing isn't enabled, only syncing from Salesforce to Postgres. Then, in Heroku Connect, you can enable the OData provider and select the tables you want to expose as external objects in the Salesforce org where you want an aggregated view. From within Salesforce, you define an external data source pointing to the OData provider in Heroku.</p>
+<p><strong>MuleSoft Anypoint</strong> MuleSoft Anypoint provides enterprise-grade API management. A MuleSoft Anypoint API can be configured so that it reads information from multiple related Salesforce organizations using the Salesforce connector with multiple connections to the organizations. The MuleSoft flow can query the different Salesforce organizations and return a specific structure that is enhanced or enriched with other third-party information if needed. When the API is invoked, it will make all the proper Salesforce organization callouts (in this example querying Account and Opportunity information) so that the data can be processed by the consumer (likely a UI). Authentication against these systems can be done through a variety of authentication mechanisms including basic authentication and OAuth. There are no restrictions on the volume of transactions, so long as the flow has been properly sized for its peak utilization (measured in vCores or Cores).</p>
+<p><strong>Native Salesforce APIs</strong> Query operations can be issued to each of the organizations of interest, notably via the Salesforce Bulk API 2.0, which is well-suited to efficiently extract thousands of records. You can retrieve the query results from each organization individually and aggregate them with a custom application or middleware per customer requirements.</p>
+<p><strong>Salesforce Connect with Cross-Org Adapter</strong> The Salesforce Connect Cross-Org adapter is not a strong fit in this scenario, since Accounts or Opportunities from remote orgs will all appear in the central org as <em>different</em> objects. For example, there is no way to add up a grand total for the Amounts of all the Opportunities across all the orgs.</p>
+<p><strong>Selective Updates Cross-Org Scenario:</strong> A salesperson, using Salesforce organization A, needs to view and update Case data from Salesforce organization B and add case comments to the parent case on Salesforce organization B while working in organization A. Data must not be replicated to organization A.</p>
+<p><strong>Heroku Connect</strong> You can use the same approach described in the <em>Data Aggregation Scenario</em> above. However, you must enable CRUD on the external object via the OData connector and write the changes back to Heroku Postgres.</p>
+<p><strong>MuleSoft Anypoint</strong> MuleSoft Anypoint provides enterprise-grade API management. You can use the same approach described in the <em>Data Aggregation Scenario</em> above.</p>
+<p><strong>Native Salesforce APIs</strong> Use Named Credentials and invoke the native Salesforce APIs to read and update data in the related Salesforce organization. A component must be designed to display the data.</p>
+<p><strong>Salesforce Connect with Cross-Org Adapter</strong> The ability to view data in an external object (as well as edit the data if you have CRUD enabled on the external object) is supported through the <a href="https://help.salesforce.com/articleView?id=sf.xorg_adapter_about.htm&#x26;type=5" class="external-link-guide" target="_blank">Salesforce cross-org adapter</a>. Relationships are also supported between external objects so you can link to the parent case in the external object. However, creating relationships is a manual process today in which you convert an existing datatype to a relationship datatype. Additionally, optimizations made within Service Cloud to work with Cases more effectively do not cascade through to the remote org. Salesforce strongly recommends testing the Cross-Org Adapter and evaluating the tradeoffs in working with External Objects vs Standard Objects for your use case.</p>
+<p><strong>Data Synchronization Cross-Org</strong>: When an account for a customer is updated in one of the organization’s business unit Salesforce organizations, the other Salesforce organization Account objects need to be updated to keep consistent account information.</p>
+<p><strong>Data 360</strong> Data 360 can be used for data replication from one org to another Salesforce org. Account data from one Salesforce org can be ingested to Data 360 using out of the box Salesforce connectors. We can use data activation mechanisms like batch activation, near real time data actions or API based activations as well to move the data from Data 360 to Salesforce Org.</p>
+<p><strong>Heroku Connect</strong> You can use the same approach described in the <em>Data Aggregation Scenario</em> above. However, you must enable bidirectional syncing, and you no longer need to enable Salesforce Connect as the bi-directional syncing will keep all the organizations up-to-date when changes are made to the Postgres table.</p>
+<p><strong>MuleSoft Anypoint</strong> MuleSoft Anypoint provides enterprise-grade API management. You can <a href="https://docs.mulesoft.com/design-center/about-designing-a-mule-application" class="external-link-guide" target="_blank">configure a Mule application</a> with Flow Designer in MuleSoft Anypoint to listen for standard and custom object events to kick off an autolaunched flow in Salesforce. When the Mule application is triggered, it can invoke the Anypoint Connector for Salesforce to communicate with any number of Salesforce organizations. In this use case, when an Account record is updated in one Salesforce organization, the Mule app can update Account records in the related Salesforce organizations. Each related Salesforce organization would have a unique update step built into the overall application flow in MuleSoft. Authentication against these systems can be done through various authentication mechanisms, including basic authentication and OAuth. There are no restrictions on the volume of transactions as long as the flow has been properly sized for its peak utilization (measured in vCores or Cores).</p>
+<p><strong>Native Salesforce APIs</strong> The <a href="https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_guidelines_datareplication.htm" class="internal-link-guide">Replication API</a> (getUpdated, getDeleted operations) could be used to sync data across orgs, but this approach is not recommended.</p>
+<p><strong>Salesforce Connect with Cross-Org Adapter</strong> You can use record-triggered flows and external objects to keep some data in sync between Salesforce organizations. For example, updating an account record in Organization A triggers a flow that then updates the matching record on the Account external object, which writes those updates to the account record in Organization B. This requires the proper use of flow semantics to avoid <a href="https://help.salesforce.com/articleView?id=000328873&#x26;type=1&#x26;mode=1" class="external-link-guide" target="_blank">mixed DML transactions</a>. Also, bear in mind that Validation Rules and Flows in Organization B will be triggered in the same way as when changes are made by our REST/SOAP APIs.</p>
+<doc-heading header="Closing Remarks" hash="closing-remarks" aria-level="2"></doc-heading>
+<p>Keep this guide in mind and refer to it when you’re planning a new data integration involving Salesforce. It’s always a good idea to understand the full scope of options available to you, and how they may fit with your specific use case.</p>
+<doc-heading header="Tell us what you think" hash="tell-us-what-you-think" aria-level="3"></doc-heading>
+<p>Help us make sure we're publishing what’s most relevant to you. <a href="https://sfdc.co/J0cWb" class="external-link-guide" target="_blank">Take our survey</a> to provide feedback on this content and tell us what you’d like to see next.</p>
+        
+        
+    </doc-content-layout>
+    
+
+    <dx-agent-miaw-ui
+        org-id="00D000000000062"
+        messaging-url="https://org62.my.salesforce-scrt.com"
+        deployment-dev-name="page_builder_miaw_ui"
+        rich-component-version="v1-stable"
+        routing-attributes='{"EndUserDomain":"architect.salesforce.com"}'
+        prompts='["Show me agentic patterns", "When to use Flow vs Apex", "Explore Data 360 designs"]'
+        welcome-text="Ask about patterns, guides, etc..."
+    ></dx-agent-miaw-ui>
+
+
+
+                    </main>
+                </div>
+            </div>
+        </div>
+
+        
+            
+                
+    <dx-footer
+        mfe-config-origin="https://architect.salesforce.com/architect/en-us/wp-json"
+        variant="no-signup"
+    ></dx-footer>
+    <arch-instrumentation use-google-tag-manager="true"></arch-instrumentation>
+
+    <!-- Load script required for MFE footer "Cookie Preferences" link to trigger the OneTrust dialog, but prevent that script from using demandbase -->
+    <!-- See this thread for details: https://salesforce-internal.slack.com/archives/C01NJBUKFDF/p1729162889254109?thread_ts=1729075666.078939&cid=C01NJBUKFDF -->
+    <script type="text/javascript">
+      globalThis.sfdcBase = { ...globalThis.sfdcBase, demandbaseDisabled: true };
+    </script>
+    <script type="text/javascript" src="https://a.sfdcstatic.com/digital/@sfdc-www/clientlibs-web-components/v1-stable/legacy.js"></script>
+            
+        
+
+    </body>
+
+    <script type="application/javascript">/* This script is generated */
+/* Client Bootstrap configuration */
+globalThis.LWR = globalThis.LWR || {};
+Object.assign(globalThis.LWR, {"appId":"developer_site_architect-docs_en-us_decision-guides_guide_guide","bootstrapModule":"@lwrjs/app-service/developer_site_architect-docs_en-us_decision-guides_guide_guide/module/esm/v/0_19_7","autoBoot":true,"imports":{"/1/bundle/esm/l/en-US/bi/0/module/mi/%40lwrjs%2Fapp-service%2Fdeveloper_site_architect-docs_en-us_decision-guides_guide_guide%2Fmodule%2Fesm%2Fv%2F0_19_7/s/sha256-X_xF5YpRHVxBUDqfIv5BgFmWywqwDpj9I9o4rj0H15I/bundle_@lwrjs_app-service_developer_site_architect-docs_en-us_decision-guides_guide_guide_module_esm.js":["@lwrjs/app-service/developer_site_architect-docs_en-us_decision-guides_guide_guide/module/esm/v/0_19_7"],"/1/bundle/esm/l/en-US/bi/0/module/mi/dx%2FscrollManager%2Fv%2F1_31_9/s/sha256-yzY_0G5qcK4EYkEMDPxaki5BMMaQdqS2SW9Z_ULpoEg/bundle_dx_scrollManager.js":["dx/scrollManager/v/1_31_9"],"/1/bundle/esm/l/en-US/bi/0/module/mi/dx%2FglobalHeader%2Fv%2F1_31_9/s/sha256-LNw8i1-u6xF4guCDbMQSvVa7RR8-o0dTdluGfpOhOVo/bundle_dx_globalHeader.js":["dx/globalHeader/v/1_31_9"],"/1/bundle/esm/l/en-US/bi/0/module/mi/arch%2FxsfMfeEvents%2Fv%2F1_28_1/s/sha256-15daNi0ptC-h4LwZjFNgrOU3dRgOU0XqhJtnVDf8tvI/bundle_arch_xsfMfeEvents.js":["arch/xsfMfeEvents/v/1_28_1"],"/1/bundle/esm/l/en-US/bi/0/module/mi/doc%2Fheader%2Fv%2F1_28_7/s/sha256-d_MGd036z8CbqWWpYjVTKuQPWxkhClcc2ctbKOmrqmQ/bundle_doc_header.js":["doc/header/v/1_28_7"],"/1/bundle/esm/l/en-US/bi/0/module/mi/doc%2FcontentLayout%2Fv%2F1_28_7/s/sha256-aCFeHblV6nWXPUsnKqGXMxNzwzLGxX6_PzzbqrYFHuc/bundle_doc_contentLayout.js":["doc/contentLayout/v/1_28_7"],"/1/bundle/esm/l/en-US/bi/0/module/mi/doc%2Fheading%2Fv%2F1_28_7/s/sha256-Y9JWHwxS4jzwPqlNBFEL6g0yhXL7GI4CY9k3cKe5pPQ/bundle_doc_heading.js":["doc/heading/v/1_28_7"],"/1/bundle/esm/l/en-US/bi/0/module/mi/dx%2FagentMiawUi%2Fv%2F1_31_9/s/sha256-Qv88I4KUDiBmHqCadGWks2RoyUmaD5tWidj-NaNiec0/bundle_dx_agentMiawUi.js":["dx/agentMiawUi/v/1_31_9"],"/1/bundle/esm/l/en-US/bi/0/module/mi/dx%2Ffooter%2Fv%2F1_31_9/s/sha256-v1futYVJp0ZxZnD1q0-0KK-E4Nx88h-WujdeC8Awcy4/bundle_dx_footer.js":["dx/footer/v/1_31_9"],"/1/bundle/esm/l/en-US/bi/0/module/mi/arch%2Finstrumentation%2Fv%2F1_28_1/s/sha256-pZy8p-YbcNvgoeqG_RuR8zsXVzliuTYmy-8_yXxh7Gg/bundle_arch_instrumentation.js":["arch/instrumentation/v/1_28_1"]},"index":{"@lwrjs/app-service/developer_site_architect-docs_en-us_decision-guides_guide_guide/module/esm/v/0_19_7":"/1/module/esm/0/l/en-US/mi/%40lwrjs%2Fapp-service%2Fdeveloper_site_architect-docs_en-us_decision-guides_guide_guide%2Fmodule%2Fesm%2Fv%2F0_19_7/latest/@lwrjs_app-service_developer_site_architect-docs_en-us_decision-guides_guide_guide_module_esm.js","dx/scrollManager/v/1_31_9":"/1/module/esm/0/l/en-US/mi/dx%2FscrollManager%2Fv%2F1_31_9/latest/dx_scrollManager.js","dx/globalHeader/v/1_31_9":"/1/module/esm/0/l/en-US/mi/dx%2FglobalHeader%2Fv%2F1_31_9/latest/dx_globalHeader.js","arch/xsfMfeEvents/v/1_28_1":"/1/module/esm/0/l/en-US/mi/arch%2FxsfMfeEvents%2Fv%2F1_28_1/latest/arch_xsfMfeEvents.js","doc/header/v/1_28_7":"/1/module/esm/0/l/en-US/mi/doc%2Fheader%2Fv%2F1_28_7/latest/doc_header.js","doc/contentLayout/v/1_28_7":"/1/module/esm/0/l/en-US/mi/doc%2FcontentLayout%2Fv%2F1_28_7/latest/doc_contentLayout.js","doc/heading/v/1_28_7":"/1/module/esm/0/l/en-US/mi/doc%2Fheading%2Fv%2F1_28_7/latest/doc_heading.js","dx/agentMiawUi/v/1_31_9":"/1/module/esm/0/l/en-US/mi/dx%2FagentMiawUi%2Fv%2F1_31_9/latest/dx_agentMiawUi.js","dx/footer/v/1_31_9":"/1/module/esm/0/l/en-US/mi/dx%2Ffooter%2Fv%2F1_31_9/latest/dx_footer.js","arch/instrumentation/v/1_28_1":"/1/module/esm/0/l/en-US/mi/arch%2Finstrumentation%2Fv%2F1_28_1/latest/arch_instrumentation.js"},"rootComponents":["dx/scrollManager/v/1_31_9","dx/globalHeader/v/1_31_9","arch/xsfMfeEvents/v/1_28_1","doc/header/v/1_28_7","doc/contentLayout/v/1_28_7","doc/heading/v/1_28_7","dx/agentMiawUi/v/1_31_9","dx/footer/v/1_31_9","arch/instrumentation/v/1_28_1"],"serverData":{},"endpoints":{"uris":{"mapping":"/1/mapping/esm/0/l/en-US/bi/0/mp/","module":"/1/bundle/esm/l/en-US/bi/0/module/mi/"}}});
+globalThis.LWR = {...globalThis.LWR, env: {"SSR":false,"SSREnabled":false,"basePath":"","locale":"en-US","assetBasePath":"","uiBasePath":""}};
+globalThis.process={...globalThis.process,env:{...globalThis.process?.env,...{"NODE_ENV":"prod"}}};
+globalThis.lwcRuntimeFlags = { ENABLE_MIXED_SHADOW_MODE: false, ENABLE_WIRE_SYNC_EMIT: false };</script>
+<script type="module" src="/1/bundle/esm/l/en-US/bi/0/module/mi/%40lwrjs%2Fapp-service%2Fdeveloper_site_architect-docs_en-us_decision-guides_guide_guide%2Fmodule%2Fesm%2Fv%2F0_19_7/s/sha256-X_xF5YpRHVxBUDqfIv5BgFmWywqwDpj9I9o4rj0H15I/bundle_@lwrjs_app-service_developer_site_architect-docs_en-us_decision-guides_guide_guide_module_esm.js"></script>
+<link rel="modulepreload" href="/1/bundle/esm/l/en-US/bi/0/module/mi/dx%2FscrollManager%2Fv%2F1_31_9/s/sha256-yzY_0G5qcK4EYkEMDPxaki5BMMaQdqS2SW9Z_ULpoEg/bundle_dx_scrollManager.js" />
+<link rel="modulepreload" href="/1/bundle/esm/l/en-US/bi/0/module/mi/dx%2FglobalHeader%2Fv%2F1_31_9/s/sha256-LNw8i1-u6xF4guCDbMQSvVa7RR8-o0dTdluGfpOhOVo/bundle_dx_globalHeader.js" />
+<link rel="modulepreload" href="/1/bundle/esm/l/en-US/bi/0/module/mi/arch%2FxsfMfeEvents%2Fv%2F1_28_1/s/sha256-15daNi0ptC-h4LwZjFNgrOU3dRgOU0XqhJtnVDf8tvI/bundle_arch_xsfMfeEvents.js" />
+<link rel="modulepreload" href="/1/bundle/esm/l/en-US/bi/0/module/mi/doc%2Fheader%2Fv%2F1_28_7/s/sha256-d_MGd036z8CbqWWpYjVTKuQPWxkhClcc2ctbKOmrqmQ/bundle_doc_header.js" />
+<link rel="modulepreload" href="/1/bundle/esm/l/en-US/bi/0/module/mi/doc%2FcontentLayout%2Fv%2F1_28_7/s/sha256-aCFeHblV6nWXPUsnKqGXMxNzwzLGxX6_PzzbqrYFHuc/bundle_doc_contentLayout.js" />
+<link rel="modulepreload" href="/1/bundle/esm/l/en-US/bi/0/module/mi/doc%2Fheading%2Fv%2F1_28_7/s/sha256-Y9JWHwxS4jzwPqlNBFEL6g0yhXL7GI4CY9k3cKe5pPQ/bundle_doc_heading.js" />
+<link rel="modulepreload" href="/1/bundle/esm/l/en-US/bi/0/module/mi/dx%2FagentMiawUi%2Fv%2F1_31_9/s/sha256-Qv88I4KUDiBmHqCadGWks2RoyUmaD5tWidj-NaNiec0/bundle_dx_agentMiawUi.js" />
+<link rel="modulepreload" href="/1/bundle/esm/l/en-US/bi/0/module/mi/dx%2Ffooter%2Fv%2F1_31_9/s/sha256-v1futYVJp0ZxZnD1q0-0KK-E4Nx88h-WujdeC8Awcy4/bundle_dx_footer.js" />
+<link rel="modulepreload" href="/1/bundle/esm/l/en-US/bi/0/module/mi/arch%2Finstrumentation%2Fv%2F1_28_1/s/sha256-pZy8p-YbcNvgoeqG_RuR8zsXVzliuTYmy-8_yXxh7Gg/bundle_arch_instrumentation.js" />
+
+    <script type="text/javascript">
+        // Make all exposed ENV variables accessible on `process.env` in client modules. Note that
+        // only ENV variables explicitly listed in .themerc.js will be exposed. Note also that this
+        // has to come at the end of the HTML body, because otherwise LWR overwrites
+        // `globalThis.process.env` completely.
+        globalThis.process = globalThis.process || {};
+        globalThis.process.env = Object.freeze({
+            ...globalThis.process.env,
+            ...JSON.parse('{"GTM_CONTAINER":"GTM-MPDHG6B","BASE_URL":"https://architect.salesforce.com","ALGOLIASEARCH_APPLICATION_ID":"D7Z417ZW9D","ALGOLIASEARCH_API_KEY":"595993120a79876e6442e0dd0cead2ee","MODE":"prod","DARK_MODE":"true","PAGEBUILDER_ENVIRONMENT":"wp","AGENTFORCE_MFE_ENABLED":"true","AGENTFORCE_ORG_ID":"00D000000000062","AGENTFORCE_MESSAGING_URL":"https://org62.my.salesforce-scrt.com"}' || null),
+        });
+    </script>
+</html>

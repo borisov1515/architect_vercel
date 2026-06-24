@@ -1,0 +1,420 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        
+        
+        
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <meta name="author" content="Salesforce" />
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="salesforce-community" content="https://trailblazer.me" />
+        <meta name="salesforce-mode" content="authprovider" />
+        <meta name="salesforce-redirect-uri" content="https://developer.salesforce.com/tbid/login" />
+        <meta name="salesforce-authprovider-login" content="https://developer.salesforce.com/tbid/dologin" />
+        <meta name="salesforce-authprovider-signup" content="" />
+        <meta name="salesforce-init-handler" content="__tbidHandleInit" />
+        <meta name="salesforce-login-handler" content="__tbidHandleLogin" />
+        <meta name="salesforce-logout-handler" content="__tbidHandleLogout" />
+        <meta name="salesforce-brand" content="dsc" />
+        <meta name="google-site-verification" content="pWMJx8-rcYCDKC3_WoEdgvQSDVvqM2cql0DcXogrpww" />
+
+        <!-- preconnect to resources always hit by the global nav on load -->
+        <link rel="preconnect" href="https://iis.digital.salesforce.com" />
+        <link rel="preconnect" href="https://wp.sfdcdigital.com" />
+        <link rel="preconnect" href="https://a.sfdcstatic.com" />
+
+        <script src="https://trailblazer.me/resource/authProviderEmbeddedLogin_v1_3" async="true" defer="true"></script>
+        <script src="/1/asset/immutable/s/17816332490000000/assets/js/tbid-controller.js" data-tbid-api-base-url="https://developer.salesforce.com/tbid"></script>
+        
+            <title>Introducing the Salesforce GraphQL API | Salesforce Developers Blog</title>
+            
+                <meta property="og:title" content="Introducing the Salesforce GraphQL API"/>
+            
+                <meta property="og:type" content="article"/>
+            
+                <meta property="og:url" content="https://developer.salesforce.com/blogs/2022/03/introducing-the-salesforce-graphql-api"/>
+            
+                <meta property="og:image" content="https://d259t2jj6zp7qm.cloudfront.net/images/20220323120950/Introducing-the-Salesforce-GraphQL-API.png?w=1260"/>
+            
+                <meta property="og:description" content="This blog was updated in November 2022 as GraphQL API is now generally available.  We are excited to announce that we’re investing further in our experience APIs with the launch of the Salesforce GraphQL API. As of Winter ’23, the Salesforce GraphQL API is generally available."/>
+            
+                <meta property="twitter:card" content="summary_large_image"/>
+            
+                <meta property="twitter:description" content="This blog was updated in November 2022 as GraphQL API is now generally available.  We are excited to announce that we’re investing further in our experience APIs with the launch of the Salesforce GraphQL API. As of Winter ’23, the Salesforce GraphQL API is generally available."/>
+            
+                <meta property="twitter:title" content="Introducing the Salesforce GraphQL API"/>
+            
+                <meta property="twitter:image" content="https://d259t2jj6zp7qm.cloudfront.net/images/20220323120950/Introducing-the-Salesforce-GraphQL-API.png?w=1260"/>
+            
+                <meta property="article:section" content="Blog"/>
+            
+                <meta property="article:published_time" content="2022-03-24T14:00:36"/>
+            
+            
+                <meta name="title" content="Introducing the Salesforce GraphQL API | Salesforce Developers Blog"/>
+            
+                <meta name="description" content="This blog was updated in November 2022 as GraphQL API is now generally available.  We are excited to announce that we’re investing further in our experience APIs with the launch of the Salesforce GraphQL API. As of Winter ’23, the Salesforce GraphQL API is generally available."/>
+            
+                <meta name="google-site-verification" content="9nBLHedRs97kceoTtOMsUGrVIhNfsJHbExzaKVARgAM"/>
+            
+            
+                <script type="application/ld+json">
+                    {"@context":"https://schema.org","headline":"Introducing the Salesforce GraphQL API","name":"Introducing the Salesforce GraphQL API","description":"This blog was updated in November 2022 as GraphQL API is now generally available.  We are excited to announce that we’re investing further in our experience APIs with the launch of the Salesforce GraphQL API. As of Winter ’23, the Salesforce GraphQL API is generally available.","url":"https://developer.salesforce.com/blogs/2022/03/introducing-the-salesforce-graphql-api","image":"https://d259t2jj6zp7qm.cloudfront.net/images/20220323120950/Introducing-the-Salesforce-GraphQL-API.png?w=1260","author":[{"@type":"Person","name":"Ben Sklar"}],"mainEntityOfPage":{"@type":"WebPage","@id":"https://developer.salesforce.com/blogs/2022/03/introducing-the-salesforce-graphql-api"},"datePublished":"2022-03-24T14:00:36.000Z","dateModified":"2025-11-05T09:17:20.000Z","@type":"BlogPosting","inLanguage":"en-US"}
+                </script>
+            
+        
+
+        <link rel="stylesheet" href="/1/asset/immutable/s/17816331750000000/assets/css/main.css" />
+
+        
+
+        <script>
+            window.prerenderReady = false;
+            // wait for body element to exist
+            document.addEventListener("DOMContentLoaded", () => {
+                let mutationTimer;
+                let lastChangeTime = performance.now();
+
+                const observer = new MutationObserver(() => {
+                    lastChangeTime = performance.now();
+                    // clear the previous timer if it hasn't been a second
+                    clearTimeout(mutationTimer);
+
+                    // restart timer to detect a stable page
+                    mutationTimer = setTimeout(() => {
+                        const now = performance.now();
+                        // if there are no dom changes for a second, tell prerender we are ready
+                        if (now - lastChangeTime >= 1000) {
+                            window.prerenderReady = true;
+                            observer.disconnect();
+                        }
+                    }, 1000);
+                });
+
+                observer.observe(document.body, {
+                    childList: true,
+                    subtree: true,
+                    attributes: true,
+                    characterData: true
+                });
+            });
+        </script>
+
+        
+            <script>
+                (function () {
+                window.Sprig = function () { U._queue.push(arguments); };
+                let U = window.Sprig; U._queue = [];
+                U.config = {
+                    /////// REQUIRED ///////
+                    envId: 'PZOIfnbk1ROP',
+                    controllerSDKURL: '/assets/js/sprig-web-controller.js',
+                    viewSDKURL: '/assets/js/sprig-web-view.js',
+                };
+                let s = document.createElement('script'); s.async = 1; s.src = U.config.controllerSDKURL;
+                let x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+                })();
+                hashCode = function(s){
+                    return s.split("").reduce(function(a,b){a=((a<<5)-a)+b.charCodeAt(0);return a&a},0);
+                }
+                triggerPageLoadSprigEvent = () => {
+                    if(Sprig.visitorId) {
+                        if(hashCode(Sprig.visitorId) % 20 === 0) { // 5% sample rate for this event
+                            Sprig("track", "ManualPageLoadEvent");
+                        }
+                    } else {
+                        setTimeout(triggerPageLoadSprigEvent, "500")
+                    }
+                }
+                triggerPageLoadSprigEvent();
+            </script>
+        
+
+        
+            <!-- Load OneTrust script only for DSC Prod app -->
+            <link rel="preconnect" href="https://geolocation.onetrust.com" />
+            
+                <script src="https://a.sfdcstatic.com/digital/one-trust/core/stable/scripttemplates/otSDKStub.js" async type="text/javascript" data-domain-script="8e783e8c-0ad0-475d-8fca-4a03afa0a02a" crossorigin></script>
+            
+        
+
+        <!-- OptanonWrapper() runs on page load and every time user updates cookie preferences -->
+        <script type="text/javascript">
+        function OptanonWrapper() {
+            // Push a oneTrust group update event to dataLayer
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+            event: 'OneTrustGroupsUpdated'
+            });
+        }
+        </script>
+        <!-- OneTrust Cookies Consent Notice end -->
+
+        
+        <!-- Google Tag Manager and Traffic Labeler -->
+        <link rel="preload" href="https://api.ipify.org/?format=json" /> <!-- ipify is only called if GTM is being loaded -->
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != "dataLayer" ? "&l=" + l : "";
+                j.async = true;
+                j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, "script", "dataLayer", "GTM-MWZCN8");
+        </script>
+        <!-- End Google Tag Manager -->
+        
+
+        <!-- Use stable global nav on prod and latest global nav everywhere else -->
+        
+            <!-- Global Navigation (stable) -->
+            <script type="module" src="https://a.sfdcstatic.com/digital/xsf/components/v1-stable/navs.js"></script>
+        
+
+        
+        
+        
+        <link rel="canonical" href="https://developer.salesforce.com/blogs/2022/03/introducing-the-salesforce-graphql-api"/>
+
+        
+        <link rel="icon" href="https://developer.salesforce.com/ns-assets/favicon.ico" />
+    <meta name="traceparent" content="00-4c5e56bd035de2cae49e13572669f583-e7cfaa17218d5298-01">
+
+                                <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="96ZND-LJLSH-JXHC9-F8GQP-6WCGS",function(){function e(){if(!i){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,o.parentNode.appendChild(e),i=!0}}function t(e){i=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(o.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",o.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"96ZND-LJLSH-JXHC9-F8GQP-6WCGS";var o=document.currentScript||document.getElementsByTagName("script")[0],i=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!i)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),o.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="xg4tplyccbmlg2r2tura-f-d7f02115b-clientnsv4-s.akamaihd.net",o="false"=="true"?2:1,i={"ak.v":"41","ak.cp":"1836958","ak.ai":parseInt("1224868",10),"ak.ol":"0","ak.cr":16,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"13faeb8d","ak.r":47359,"ak.a2":n,"ak.m":"dsca","ak.n":"essl","ak.cport":10093,"ak.gh":"2.16.64.157","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"bbr","ak.t":"1782226210","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==HXZbBEOEaXSNmwXp8qnxcm+Fb90KwusMNPHiBUQDGZLyfaO3E84ePQeIBsxJfnrjbiAd2cDy6WCGPkYyDGdWV+scJSHLLYDssBatLyaMyY79vs9ddSQMgJzkUC2PPJOJYGnZKZtf9aQMUc0mnNrhSzo6h9SdFLJxOW1dslKtxBD4EBF8wLfmMUxazEW/c8oMfR7OXZBhfGNuj8nTgzO5QqVJOkz/IErjeoWt0ywcEzh+yXw+K66FGVwGL93KtAtNYqBhU+d45BYU2DsYSq+GUpBkxJ4uOwpPI1j3J7e7LMJlUYMLjMZvGl42i8LqM0HkIMC8buPVxwEkbRY5IIdPUaZXYa9tL8pI83bJ2+hz0w6X9EnFjW/FSnFUQGxHn2CGNoFkxPmTo2IcN8DKbafss6uyXXyU12Sio7DnxZMdKMM=","ak.pv":"94","ak.dpoabenc":"","ak.tf":o};if(""!==t)i["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))i["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(i)},rv:function(){var e=["ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.0rtt.ed","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:i,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+
+    <body>
+        <dx-scroll-manager></dx-scroll-manager>
+        
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe
+                src="https://www.googletagmanager.com/ns.html?id=GTM-MWZCN8"
+                height="0"
+                width="0"
+                style="display: none; visibility: hidden"
+            ></iframe>
+        </noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        
+
+        <div class="slds-grid slds-grid_vertical">
+            
+                
+                    
+
+
+
+
+    
+    
+
+
+
+
+<!-- global/context nav -->
+<div class="global-nav-container">
+    
+    
+    <dx-global-header domain="https://developer.salesforce.com" locale="en-us"></dx-global-header>
+</div>
+<!-- end global/context nav -->
+
+
+
+<!-- doc header -->
+<div class="sticky-doc-header context-nav-active">
+    <doc-header
+        
+        subtitle="Developers"
+        brand=""
+        
+        
+        
+        hide-doc-header=""
+        ></doc-header>
+</div>
+<!-- end doc header -->
+
+                
+            
+
+            <div class="slds-col main-container">
+                <div class="slds-is-relative">
+                    <main role="main" id="maincontent">
+                        
+                        
+                        <link rel="stylesheet" href="/1/asset/immutable/s/17816331750000000/assets/css/pages/blogs-post.css"/>
+<link rel="stylesheet" href="/1/asset/immutable/s/17816331750000000/assets/css/components/subscribe.css"/>
+
+<dx-dark-mode-manager></dx-dark-mode-manager>
+<div class="post-page-container blog-page-container">
+    <dx-featured-content-header
+        class="featured-content-header-padding-lg"
+        header="Introducing the Salesforce GraphQL API"
+        body="This blog was updated in November 2022 as GraphQL API is now generally available.  We are excited to announce that we’re investing further in our experience APIs with the launch of the Salesforce GraphQL API. As of Winter ’23, the Salesforce GraphQL API is generally available."
+        img-src="https://d259t2jj6zp7qm.cloudfront.net/images/20220323120950/Introducing-the-Salesforce-GraphQL-API.png?w=1260"
+        img-alt="Introducing the Salesforce GraphQL API"
+        authors="[{&quot;name&quot;:&quot;Ben Sklar&quot;,&quot;image_src&quot;:&quot;https://secure.gravatar.com/avatar/9d879382bea9736015b17606b6678a1d5331680ada6e003de30a083b9e5bd6f2?s=24&amp;d=mm&amp;r=g&quot;}]"
+        label="Salesforce Developers Blog"
+        img-placement="below"
+        enable-dark-mode-toggle="true"
+    >
+    
+    <div slot="language-selector">
+        <dw-language-selector
+            post-acf="{&quot;canonicalid&quot;:&quot;&quot;,&quot;language&quot;:&quot;english&quot;,&quot;audio_url&quot;:&quot;https://a.sfdcstatic.com/developer-website/blog-audio/198088/198088.mp3&quot;,&quot;hash&quot;:&quot;1dbedac38ce22a7883ecba5943c605fe&quot;,&quot;transcription_id&quot;:&quot;2f7e3f78-2f5d-449f-86cf-356d0fd9d07b&quot;,&quot;ready&quot;:true}"
+            post-id="198088"
+        >
+        </dw-language-selector>
+    </div>
+    
+    </dx-featured-content-header>
+
+    <dx-section class="section-padding-lg no-top-padding">
+        <dx-socials details="&quot;March 24, 2022&quot;" class='post-socials'></dx-socials>
+
+        
+            <dx-audio audio-src="https://a.sfdcstatic.com/developer-website/blog-audio/198088/198088.mp3" audio-title="Introducing the Salesforce GraphQL API"></dx-audio>
+        
+
+        <article class="prose">
+            <html><head>
+                                <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="96ZND-LJLSH-JXHC9-F8GQP-6WCGS",function(){function e(){if(!i){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,o.parentNode.appendChild(e),i=!0}}function t(e){i=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(o.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",o.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"96ZND-LJLSH-JXHC9-F8GQP-6WCGS";var o=document.currentScript||document.getElementsByTagName("script")[0],i=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!i)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),o.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="xg4tplyccbmlg2r2tura-f-d7f02115b-clientnsv4-s.akamaihd.net",o="false"=="true"?2:1,i={"ak.v":"41","ak.cp":"1836958","ak.ai":parseInt("1224868",10),"ak.ol":"0","ak.cr":16,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"13faeb8d","ak.r":47359,"ak.a2":n,"ak.m":"dsca","ak.n":"essl","ak.cport":10093,"ak.gh":"2.16.64.157","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"bbr","ak.t":"1782226210","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==HXZbBEOEaXSNmwXp8qnxcm+Fb90KwusMNPHiBUQDGZLyfaO3E84ePQeIBsxJfnrjbiAd2cDy6WCGPkYyDGdWV+scJSHLLYDssBatLyaMyY79vs9ddSQMgJzkUC2PPJOJYGnZKZtf9aQMUc0mnNrhSzo6h9SdFLJxOW1dslKtxBD4EBF8wLfmMUxazEW/c8oMfR7OXZBhfGNuj8nTgzO5QqVJOkz/IErjeoWt0ywcEzh+yXw+K66FGVwGL93KtAtNYqBhU+d45BYU2DsYSq+GUpBkxJ4uOwpPI1j3J7e7LMJlUYMLjMZvGl42i8LqM0HkIMC8buPVxwEkbRY5IIdPUaZXYa9tL8pI83bJ2+hz0w6X9EnFjW/FSnFUQGxHn2CGNoFkxPmTo2IcN8DKbafss6uyXXyU12Sio7DnxZMdKMM=","ak.pv":"94","ak.dpoabenc":"","ak.tf":o};if(""!==t)i["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))i["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(i)},rv:function(){var e=["ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.0rtt.ed","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:i,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head><body><p><em>This blog was updated in November 2022 as GraphQL API is now generally available.&nbsp;</em></p>
+<p>We are excited to announce that we’re investing further in our experience APIs with the launch of the <b>Salesforce GraphQL API</b>. As of Winter ’23, the Salesforce GraphQL API is generally available. This API allows developers to interact with the Salesforce Platform through GraphQL, providing a new way to create rich, performant mobile and web applications.</p>
+<p>
+			  <span>
+			    <img loading="lazy" decoding="async" src="https://d259t2jj6zp7qm.cloudfront.net/images/20220323125222/Screen-Shot-2022-03-23-at-11.49.30-AM.png" width="999" height="309" alt="Logos of Salesforce, Platform and GraphQL">
+			  </span>
+			</p>
+
+<h2>What’s wrong with traditional REST APIs?</h2>
+<p>Imagine you’re out at your favorite restaurant — in this case we’ll call it the RESTaurant. Your waiter comes over to your table and asks, “What would you like to order?” You reply, “I’ll take the ravioli, but please, no cheese.” To your chagrin, your waiter explains, “The cheese has already been added and can’t be removed. You’ll get the ravioli with the cheese, or you’ll have to order something else.” Herein lies a fundamental problem with traditional REST endpoints — you as the client can’t change what the <code>Cheese Ravioli Endpoint</code> returns back to you. Had this restaurant been the GraphQL Restaurant, you could order ravioli <i>without cheese</i>.</p>
+<p>Okay, so I know what you might be thinking: “But, I thought REST was the gold standard for APIs?” You’re not wrong; REST is still a great way to design and implement APIs. However, traditional REST APIs have some challenges when it comes to building today’s highly performant and scalable web and mobile apps.</p>
+<p>Let’s explore all of the flaws with traditional REST APIs, go over what GraphQL is, and how GraphQL solves these problems. We’ll also discuss other GraphQL benefits, such as the ability to query your organization’s data for specific information. Once you realize all the advantages of a GraphQL API, you’ll want to leverage it to build the best apps for your users.</p>
+<h2>What is GraphQL?</h2>
+<p>GraphQL is a standard query language for APIs and a runtime for fulfilling those queries with your data. A GraphQL API is a new paradigm of sending and receiving data, offering clients a single endpoint to call for all data needed in one request. Apps that call GraphQL APIs are often much more performant than those that use traditional REST APIs. This is because they are able to reduce round trips to the server through their ability to retrieve all necessary data in just a single invocation. Not only can clients query for all the data they want in a single request, but the response will contain only the data they need. Nothing more, nothing less. GraphQL is a new way to address many pain points for application developers; it is an open specification backed by a diverse community that has seen success at high scale.</p>
+<h2>Developers lack control with traditional REST APIs</h2>
+<p>Traditional REST APIs have some shortcomings. Let’s say you make a call to a traditional REST API, and your use case is looking up a user’s phone number. Most likely, you’ll make a call to a REST API endpoint that gives you all the data that you have permission to access about that user. So, rather than just retrieving a user’s phone number, you’ll also receive their address, their manager’s name, etc. In short, <b>everything returned back to you that isn’t the user’s phone number is wasted data </b>— which is an unnecessary cost to both the server and you. Sure, you could use query parameters on every REST endpoint to prevent this problem of overfetching data with REST APIs. The problem is that there aren’t widely adopted standards for this, so not every endpoint out there today has it, and it may compete with already limited space in the URL. If an endpoint doesn’t have this functionality, then there’s nothing you can do. With GraphQL, you include all the fields in your query that you’re interested in, and receive only the data for those fields — a feature known as “field selection.”</p>
+<p>Too much data returned in a single API request may be wasteful. Why don’t we just create a multitude of endpoints that return very specific pieces of data to limit this waste? This results in far too many REST endpoints, which makes it even harder for developers to determine the right one they need to call. However, if you do want all associated data, you would have to call each one of these endpoints to get what you need, with each call resulting in another round trip to the server. As a developer of an application, you want good performance for your users. One way to achieve this is to minimize network trips and unnecessary data transfer between the client and server, since each additional round trip adds latency. This issue is especially pronounced for mobile users who may have limited connectivity or bandwidth. A GraphQL API solves this problem by allowing for resource aggregation, or in other words, the ability to retrieve all the data your app needs in just one request.</p>
+<p>As discussed, it’s often the case that REST APIs have limited or no support for things like field selection and aggregation. Developers are frequently left with difficult tradeoffs that distract from building the best possible experience for their users. So, how do you build an app with incredible performance and no data waste? The solution is quite simple: <b>a single REST endpoint whose response has exactly what you need — with nothing extra</b>. The problem is that <i>this endpoint doesn’t exist</i>. Okay, so as a developer, you request that a new REST endpoint be created with all of your exact needs. However, you know that it’s unrealistic to think that a new endpoint will be created for every possible use case. But, wouldn’t it be great if you could control what fields and which resources the server returns to you? Well, now you’ll be able to with the new Salesforce GraphQL API: <b>a single endpoint whose response can be shaped by you</b>.</p>
+<h2>GraphQL puts the power into the hands of developers</h2>
+<p>Unlike traditional REST APIs, with GraphQL, the power is in the hands of you, the developer. As a client, you can ask the server for exactly what you want and not receive any data you don’t need. You can avoid multiple round trips to the server since you can include in your request what traditionally would require calling multiple REST endpoints. Using powerful tools like <a href="https://github.com/graphql/graphiql">GraphiQL</a>, a web IDE for GraphQL, you can introspect the schema and quickly learn how to make a request for the data you need.</p>
+<p>In mobile and web apps, time spent on the network is usually a significant part of the overall request processing time, with every round trip resulting in longer wait times. This can lead to user dissatisfaction, lower app usage, and worse conversion rates. With GraphQL, you no longer need to worry about dealing with multiple endpoints and going back and forth with the server to retrieve the data you need. As a developer, you are free to focus on your own software requirements without agonizing about how many endpoints you need to call, or how you’re going to stitch together all the data you receive. There’s no need to write multiple abstraction layers, nor do you need to spend your time orchestrating API call after API call.</p>
+<h2>What this means for Salesforce developers</h2>
+<p>Even though there are imperfections with traditional REST APIs when building experiences, they still do have a place, and we aren’t dropping our investment there. Rather, a key strength of the Salesforce Platform is our support for <a href="https://www.mulesoft.com/resources/api/types-of-apis">various type of APIs</a>. System APIs, such as the <a href="https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/using_resources_working_with_records.htm">sObject API</a>, or experience APIs like <a href="https://developer.salesforce.com/docs/atlas.en-us.uiapi.meta/uiapi/ui_api_get_started.htm">UI API</a>, have enabled developers to build a wide variety of applications using the Salesforce Platform. With the new Salesforce GraphQL API, we’re providing even more benefits for Salesforce developers, including:</p>
+<ul>
+<li>Field selection</li>
+<li>Resource aggregation</li>
+<li>Schema introspection</li>
+<li>sObject queryability</li>
+</ul>
+<h2>What’s Next</h2>
+<p>Although today we support querying (reads), we are working hard to bring mutations to the API as well (writes). We are also working on a GraphQL Wire Adapter that will bring native GraphQL support to Lightning Web Components (LWC). We are planning to bring these new features in the next year.</p>
+<h2>About the Authors</h2>
+<p>Spencer MacKinnon is a Developer at Salesforce who has spent too much time thinking about GraphQL. He used to have hobbies, but now spends his evenings chasing around his puppy, Merope. Follow him <a href="https://twitter.com/smackinnon">@smackinnon.</a></p>
+<p>Ben Sklar is a Senior Product Manager at Salesforce who is a major fan of GraphQL. He is an avid skier, but spends most of his time playing with his Cavapoo, Percy.</p>
+<p>
+			  <span>
+			    <img loading="lazy" decoding="async" src="https://d259t2jj6zp7qm.cloudfront.net/images/20220323123409/Screen-Shot-2022-03-23-at-12.33.51-PM.png" width="511" height="482" alt="Spencer and Ben with their puppies">
+			  </span>
+			</p>
+</body></html>
+        </article>
+    </dx-section>
+
+    
+
+    
+        <dx-hr spacing="2xl"></dx-hr>
+    
+
+    
+</div>
+                        
+                    </main>
+                </div>
+            </div>
+        </div>
+
+        
+            
+                <div class="footer-container">
+                    
+                    
+                    
+                    
+                    <dx-footer
+                        variant="large-signup"
+                        mfe-config-origin="https://developer.salesforce.com/developer/en-us/wp-json"
+                    ></dx-footer>
+                </div>
+            
+        
+
+    </body>
+
+    
+
+    <script type="application/javascript">/* This script is generated */
+/* Client Bootstrap configuration */
+globalThis.LWR = globalThis.LWR || {};
+Object.assign(globalThis.LWR, {"appId":"wordpress_route_/blogs","bootstrapModule":"@lwrjs/app-service/wordpress_route_/blogs/module/esm/v/0_22_14","autoBoot":true,"imports":{"/1/bundle/esm/l/en-US/bi/0/module/mi/%40lwrjs%2Fapp-service%2Fwordpress_route_%2Fblogs%2Fmodule%2Fesm%2Fv%2F0_22_14/s/sha256-PIRZsQHgL17HtSHEk7h1i6u4sEpyeNsKW7EghPBAkm8/bundle_@lwrjs_app-service_wordpress_route__blogs_module_esm.js":["@lwrjs/app-service/wordpress_route_/blogs/module/esm/v/0_22_14"],"/1/bundle/esm/l/en-US/bi/0/module/mi/dx%2FscrollManager%2Fv%2F1_32_0/s/sha256-oStZ06S6Bv_mePxNTEA3myHClUGbhoTX_5FVddClEqc/bundle_dx_scrollManager.js":["dx/scrollManager/v/1_32_0"],"/1/bundle/esm/l/en-US/bi/0/module/mi/dx%2FglobalHeader%2Fv%2F1_32_0/s/sha256-ZpV5Zo6ZaV-KnQiy6-wOP4ATGexATvBtl0Bg4GpG7LY/bundle_dx_globalHeader.js":["dx/globalHeader/v/1_32_0"],"/1/bundle/esm/l/en-US/bi/0/module/mi/doc%2Fheader%2Fv%2F1_29_0/s/sha256-D-qS1CJI9yqYQYKc-LFOzKVUxmAqmLse1YKfDUkWUo8/bundle_doc_header.js":["doc/header/v/1_29_0"],"/1/bundle/esm/l/en-US/bi/0/module/mi/dx%2FdarkModeManager%2Fv%2F1_32_0/s/sha256-oTyq2LB3qMQleLy8wIWypF7pVjJADicVtCRd6KYxh1Y/bundle_dx_darkModeManager.js":["dx/darkModeManager/v/1_32_0"],"/1/bundle/esm/l/en-US/bi/0/module/mi/dx%2FfeaturedContentHeader%2Fv%2F1_32_0/s/sha256-O0Rj9Ls-ap_toWBKKiUqSz_Mehzn1B8S-n16i3BbL5g/bundle_dx_featuredContentHeader.js":["dx/featuredContentHeader/v/1_32_0"],"/1/bundle/esm/l/en-US/bi/0/module/mi/dw%2FlanguageSelector%2Fv%2F1_28_2/s/sha256-I-vTfI2ugMAcCC4EW6SMIz0igpmuLKNZF0J8Y_PwPic/bundle_dw_languageSelector.js":["dw/languageSelector/v/1_28_2"],"/1/bundle/esm/l/en-US/bi/0/module/mi/dx%2Fsection%2Fv%2F1_32_0/s/sha256-NbqMKAziD70jmJVTmhhCzWRA8Weg2XKpBqGv6szSEWY/bundle_dx_section.js":["dx/section/v/1_32_0"],"/1/bundle/esm/l/en-US/bi/0/module/mi/dx%2Fsocials%2Fv%2F1_32_0/s/sha256-fXI6JR7l0fh9GeyKfVHo4DTckkPoenzsMb76xulZ3-w/bundle_dx_socials.js":["dx/socials/v/1_32_0"],"/1/bundle/esm/l/en-US/bi/0/module/mi/dx%2Faudio%2Fv%2F1_32_0/s/sha256-TjhZKf0BO6VHglYjAfwUkW4EjbXCe7t7_n2xA046tg0/bundle_dx_audio.js":["dx/audio/v/1_32_0"],"/1/bundle/esm/l/en-US/bi/0/module/mi/dx%2Fhr%2Fv%2F1_32_0/s/sha256-UOfy8xxBJchI7WsiDf9lL0dlD2brZWPoGn51pxOFzKM/bundle_dx_hr.js":["dx/hr/v/1_32_0"],"/1/bundle/esm/l/en-US/bi/0/module/mi/dx%2Ffooter%2Fv%2F1_32_0/s/sha256-oHDwuXm2lIYN9qS1XB9psaYAMFbStjyr8rx7YAtnnew/bundle_dx_footer.js":["dx/footer/v/1_32_0"],"/1/bundle/esm/l/en-US/bi/0/module/mi/dw%2Finstrumentation%2Fv%2F1_28_2/s/sha256-GTf3ZnQalOrbo23IqAE9ieG_WvRhHAlxcOhw8GDLGw8/bundle_dw_instrumentation.js":["dw/instrumentation/v/1_28_2"]},"index":{"@lwrjs/app-service/wordpress_route_/blogs/module/esm/v/0_22_14":"/1/module/esm/0/l/en-US/mi/%40lwrjs%2Fapp-service%2Fwordpress_route_%2Fblogs%2Fmodule%2Fesm%2Fv%2F0_22_14/latest/@lwrjs_app-service_wordpress_route__blogs_module_esm.js","dx/scrollManager/v/1_32_0":"/1/module/esm/0/l/en-US/mi/dx%2FscrollManager%2Fv%2F1_32_0/latest/dx_scrollManager.js","dx/globalHeader/v/1_32_0":"/1/module/esm/0/l/en-US/mi/dx%2FglobalHeader%2Fv%2F1_32_0/latest/dx_globalHeader.js","doc/header/v/1_29_0":"/1/module/esm/0/l/en-US/mi/doc%2Fheader%2Fv%2F1_29_0/latest/doc_header.js","dx/darkModeManager/v/1_32_0":"/1/module/esm/0/l/en-US/mi/dx%2FdarkModeManager%2Fv%2F1_32_0/latest/dx_darkModeManager.js","dx/featuredContentHeader/v/1_32_0":"/1/module/esm/0/l/en-US/mi/dx%2FfeaturedContentHeader%2Fv%2F1_32_0/latest/dx_featuredContentHeader.js","dw/languageSelector/v/1_28_2":"/1/module/esm/0/l/en-US/mi/dw%2FlanguageSelector%2Fv%2F1_28_2/latest/dw_languageSelector.js","dx/section/v/1_32_0":"/1/module/esm/0/l/en-US/mi/dx%2Fsection%2Fv%2F1_32_0/latest/dx_section.js","dx/socials/v/1_32_0":"/1/module/esm/0/l/en-US/mi/dx%2Fsocials%2Fv%2F1_32_0/latest/dx_socials.js","dx/audio/v/1_32_0":"/1/module/esm/0/l/en-US/mi/dx%2Faudio%2Fv%2F1_32_0/latest/dx_audio.js","dx/hr/v/1_32_0":"/1/module/esm/0/l/en-US/mi/dx%2Fhr%2Fv%2F1_32_0/latest/dx_hr.js","dx/footer/v/1_32_0":"/1/module/esm/0/l/en-US/mi/dx%2Ffooter%2Fv%2F1_32_0/latest/dx_footer.js","dw/instrumentation/v/1_28_2":"/1/module/esm/0/l/en-US/mi/dw%2Finstrumentation%2Fv%2F1_28_2/latest/dw_instrumentation.js"},"rootComponents":["dx/scrollManager/v/1_32_0","dx/globalHeader/v/1_32_0","doc/header/v/1_29_0","dx/darkModeManager/v/1_32_0","dx/featuredContentHeader/v/1_32_0","dw/languageSelector/v/1_28_2","dx/section/v/1_32_0","dx/socials/v/1_32_0","dx/audio/v/1_32_0","dx/hr/v/1_32_0","dx/footer/v/1_32_0","dw/instrumentation/v/1_28_2"],"serverData":{},"endpoints":{"uris":{"mapping":"/1/mapping/esm/0/l/en-US/bi/0/mp/","module":"/1/bundle/esm/l/en-US/bi/0/module/mi/"}}});
+globalThis.LWR = {...globalThis.LWR, env: {"SSR":false,"SSREnabled":false,"basePath":"","locale":"en-US","assetBasePath":"","uiBasePath":""}};
+globalThis.process={...globalThis.process,env:{...globalThis.process?.env,...{"NODE_ENV":"prod"}}};
+globalThis.lwcRuntimeFlags = { ENABLE_MIXED_SHADOW_MODE: false, ENABLE_WIRE_SYNC_EMIT: false };</script>
+<script type="module" src="/1/bundle/esm/l/en-US/bi/0/module/mi/%40lwrjs%2Fapp-service%2Fwordpress_route_%2Fblogs%2Fmodule%2Fesm%2Fv%2F0_22_14/s/sha256-PIRZsQHgL17HtSHEk7h1i6u4sEpyeNsKW7EghPBAkm8/bundle_@lwrjs_app-service_wordpress_route__blogs_module_esm.js"></script>
+<link rel="modulepreload" href="/1/bundle/esm/l/en-US/bi/0/module/mi/dx%2FscrollManager%2Fv%2F1_32_0/s/sha256-oStZ06S6Bv_mePxNTEA3myHClUGbhoTX_5FVddClEqc/bundle_dx_scrollManager.js" />
+<link rel="modulepreload" href="/1/bundle/esm/l/en-US/bi/0/module/mi/dx%2FglobalHeader%2Fv%2F1_32_0/s/sha256-ZpV5Zo6ZaV-KnQiy6-wOP4ATGexATvBtl0Bg4GpG7LY/bundle_dx_globalHeader.js" />
+<link rel="modulepreload" href="/1/bundle/esm/l/en-US/bi/0/module/mi/doc%2Fheader%2Fv%2F1_29_0/s/sha256-D-qS1CJI9yqYQYKc-LFOzKVUxmAqmLse1YKfDUkWUo8/bundle_doc_header.js" />
+<link rel="modulepreload" href="/1/bundle/esm/l/en-US/bi/0/module/mi/dx%2FdarkModeManager%2Fv%2F1_32_0/s/sha256-oTyq2LB3qMQleLy8wIWypF7pVjJADicVtCRd6KYxh1Y/bundle_dx_darkModeManager.js" />
+<link rel="modulepreload" href="/1/bundle/esm/l/en-US/bi/0/module/mi/dx%2FfeaturedContentHeader%2Fv%2F1_32_0/s/sha256-O0Rj9Ls-ap_toWBKKiUqSz_Mehzn1B8S-n16i3BbL5g/bundle_dx_featuredContentHeader.js" />
+<link rel="modulepreload" href="/1/bundle/esm/l/en-US/bi/0/module/mi/dw%2FlanguageSelector%2Fv%2F1_28_2/s/sha256-I-vTfI2ugMAcCC4EW6SMIz0igpmuLKNZF0J8Y_PwPic/bundle_dw_languageSelector.js" />
+<link rel="modulepreload" href="/1/bundle/esm/l/en-US/bi/0/module/mi/dx%2Fsection%2Fv%2F1_32_0/s/sha256-NbqMKAziD70jmJVTmhhCzWRA8Weg2XKpBqGv6szSEWY/bundle_dx_section.js" />
+<link rel="modulepreload" href="/1/bundle/esm/l/en-US/bi/0/module/mi/dx%2Fsocials%2Fv%2F1_32_0/s/sha256-fXI6JR7l0fh9GeyKfVHo4DTckkPoenzsMb76xulZ3-w/bundle_dx_socials.js" />
+<link rel="modulepreload" href="/1/bundle/esm/l/en-US/bi/0/module/mi/dx%2Faudio%2Fv%2F1_32_0/s/sha256-TjhZKf0BO6VHglYjAfwUkW4EjbXCe7t7_n2xA046tg0/bundle_dx_audio.js" />
+<link rel="modulepreload" href="/1/bundle/esm/l/en-US/bi/0/module/mi/dx%2Fhr%2Fv%2F1_32_0/s/sha256-UOfy8xxBJchI7WsiDf9lL0dlD2brZWPoGn51pxOFzKM/bundle_dx_hr.js" />
+<link rel="modulepreload" href="/1/bundle/esm/l/en-US/bi/0/module/mi/dx%2Ffooter%2Fv%2F1_32_0/s/sha256-oHDwuXm2lIYN9qS1XB9psaYAMFbStjyr8rx7YAtnnew/bundle_dx_footer.js" />
+<link rel="modulepreload" href="/1/bundle/esm/l/en-US/bi/0/module/mi/dw%2Finstrumentation%2Fv%2F1_28_2/s/sha256-GTf3ZnQalOrbo23IqAE9ieG_WvRhHAlxcOhw8GDLGw8/bundle_dw_instrumentation.js" />
+
+     
+    <dw-instrumentation use-google-tag-manager="true"></dw-instrumentation>
+    
+
+    <script type="text/javascript">
+        // Make all exposed ENV variables accessible on `process.env` in client modules. Note that
+        // only ENV variables explicitly listed in .themerc.js will be exposed. Note also that this
+        // has to come at the end of the HTML body, because otherwise LWR overwrites
+        // `globalThis.process.env` completely.
+        globalThis.process = globalThis.process || {};
+        globalThis.process.env = Object.freeze({
+            ...globalThis.process.env,
+            ...JSON.parse(`{"GTM_CONTAINER":"GTM-MWZCN8","SPRIG_ENV":"PZOIfnbk1ROP","SSG_ENABLED":"true","BASE_URL":"https://developer.salesforce.com","MODE":"prod","TBID_BASE_URL":"https://trailblazer.me","TBID_API_BASE_URL":"https://developer.salesforce.com/tbid","DRM_J2S_HANDLER_BASE_URL":"https://sapi-th-ms-form-handler-infra-v1.salesforce-business.api.sfdcbt.net","DRM_RECAPTCHA_SITE_KEY":"6LdnxQEVAAAAAEci-AbfPj8ZK-z1EAE-yeoyHlgd","SIGNUP_RECAPTCHA_SITE_KEY":"6Lf9RBArAAAAANofnM_5_k_-6v5c6FlwT5Xm67zC","DARK_MODE":"true","FEATURED_BLOG_POST_ID":"204875","SHOW_PRERELEASE_TRIALS":"false","PRERELEASE_TRIAL_VERSION":"Summer '26","PAGEBUILDER_ENVIRONMENT":"wp"}` || null),
+        });
+    </script>
+
+    
+
+    
+    <script>
+        document.addEventListener('www_track', (e) => {
+          try {
+            if(window.dataLayer) {
+              window.dataLayer.push(e.detail);
+            }
+          } catch {
+            console.log('Could not push event detail to GTM');
+          }
+        });
+    </script>
+    
+</html>
